@@ -30,17 +30,11 @@ const H3 = css`
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;
-
-  ${media.PHONE} {
-    font-size: 24px;
-    line-height: 32px;
-  }
 `;
 
 const S1 = css`
   font-family: "Helios";
   font-size: 16px;
-  font-style: italic;
   font-weight: 400;
   line-height: 24px;
 `;
@@ -53,7 +47,7 @@ const B1 = css`
 `;
 
 const B2 = css`
-  font-family: 'Helios';
+  font-family: "Helios";
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
