@@ -28,6 +28,7 @@ const SignUp = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [errorEmail, setErrorEmail] = useState("");
+  const [isConfirmCorrect, setIsConfirmCorrect] = useState(true);
   const { register, handleSubmit } = useForm<ISign>();
   const onSubmit = (data: ISign) => {
     if (data.password === data.confirmPassword) {
@@ -41,7 +42,7 @@ const SignUp = () => {
           setErrorEmail("Sorry, that email address is already used!");
         });
     } else {
-      alert("Password and confirm password does not match!");
+      setIsConfirmCorrect(false);
     }
   };
   return (
@@ -86,6 +87,13 @@ const SignUp = () => {
             id="confirmPassword"
             type="password"
           />
+          {isConfirmCorrect ? (
+            <></>
+          ) : (
+            <StyledErrorLabel htmlFor="confirmPassword">
+              Password and confirm password does not match!
+            </StyledErrorLabel>
+          )}
         </StyledContainer>
         <Button text="SIGN UP" />
       </StyledForm>
