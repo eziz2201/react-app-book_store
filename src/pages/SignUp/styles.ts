@@ -1,13 +1,23 @@
 import styled from "styled-components";
 import { colors } from "../../ui/colors";
+import { media } from "../../ui/media";
 import { typography } from "../../ui/typography";
 
 export const StyledSign = styled.div`
-  width: 544px;
+  max-width: 544px;
+  width: 100%;
   margin: 0 auto;
-  margin-top: 191px;
-  margin-bottom: 117px;
+  margin-top: 194px;
+  margin-bottom: 205px;
   border: 1px solid ${colors.GRAY};
+  ${media.TABLET} {
+    margin-top: 170px;
+    margin-bottom: 169px;
+  }
+  ${media.PHONE} {
+    border: none;
+    margin: 56px 0;
+  }
 `;
 
 export const StyledTabs = styled.div`
@@ -15,6 +25,9 @@ export const StyledTabs = styled.div`
   grid-template-columns: 1fr 1fr;
   border-bottom: 1px solid ${colors.GRAY};
   padding: 0 32px;
+  ${media.PHONE} {
+    padding: 0;
+  }
 `;
 
 export const StyledTab = styled.div`
@@ -35,6 +48,9 @@ export const StyledTab = styled.div`
 export const StyledForm = styled.form`
   padding: 32px;
   padding-bottom: 40px;
+  ${media.PHONE} {
+    padding: 32px 0 0;
+  }
 `;
 
 export const StyledContainer = styled.div`
