@@ -3,6 +3,7 @@ import { colors } from "../../ui/colors";
 import { typography } from "../../ui/typography";
 
 export const StyledButton = styled.button`
+  width: 100%;
   padding: 18px;
   background-color: ${colors.PRIMARY};
   border: none;

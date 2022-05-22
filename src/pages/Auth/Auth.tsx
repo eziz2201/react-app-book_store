@@ -1,8 +1,9 @@
+import { StyledAuth } from "./styles"
 
 
 const Auth = () => {
   return (
-    <div>Auth</div>
+    <StyledAuth>Auth</StyledAuth>
   )
 }
 
