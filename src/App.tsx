@@ -1,8 +1,12 @@
-import { StyledApp } from "./AppStyles";
-import Tabs from "./components/Tabs/Tabs";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./router/AppRouter";
 
 function App() {
-  return <StyledApp className="App"><Tabs/></StyledApp>;
+  return (
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
+  );
 }
 
 export default App;

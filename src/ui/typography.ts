@@ -34,7 +34,7 @@ const H3 = css`
 
 const S1 = css`
   font-family: "Helios";
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 24px;
 `;
@@ -53,6 +53,20 @@ const B2 = css`
   line-height: 24px;
 `;
 
+const TAB = css`
+  font-family: "Helios";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+`;
+
+const BUTTON = css`
+  font-family: "Bebas Neue";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+`;
+
 export const typography = {
   H1,
   H2,
@@ -60,4 +74,6 @@ export const typography = {
   S1,
   B1,
   B2,
+  TAB,
+  BUTTON,
 };

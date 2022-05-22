@@ -6,7 +6,7 @@ export const StyledButton = styled.button`
   padding: 18px;
   background-color: ${colors.PRIMARY};
   border: none;
-  ${typography.H3};
+  ${typography.BUTTON};
   color: ${colors.WHITE};
   text-align: center;
 

@@ -1,7 +1,11 @@
 import { StyledInput } from "./Styles";
 
-const Input = () => {
-  return <StyledInput disabled placeholder="dasfad" type="text"></StyledInput>;
+interface IInput {
+  placeholder: string,
+}
+
+const Input = ({placeholder}:IInput) => {
+  return <StyledInput placeholder={placeholder} type="text"></StyledInput>;
 };
 
 export default Input;

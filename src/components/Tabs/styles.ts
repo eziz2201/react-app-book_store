@@ -14,7 +14,7 @@ export const StyledTabList = styled.div`
 `;
 export const StyledTab = styled.div`
   padding: 0 40px 24px;
-  ${typography.S1};
+  ${typography.TAB};
   text-align: center;
   color: ${colors.SECONDARY};
   cursor: pointer;
