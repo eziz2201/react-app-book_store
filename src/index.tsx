@@ -1,7 +1,10 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { Provider } from "react-redux";
 import App from "./App";
 import GlobalStyles from "./GlobalStyles";
+import store from "./store/store";
+import './firebase';
 
 const app = document.querySelector("#root");
 
@@ -12,7 +15,9 @@ const root = createRoot(app);
 
 root.render(
   <React.StrictMode>
-    <GlobalStyles/>
-    <App />
+    <Provider store={store}>
+      <GlobalStyles />
+      <App />
+    </Provider>
   </React.StrictMode>
 );

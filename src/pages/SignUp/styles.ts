@@ -86,3 +86,10 @@ export const StyledLabel = styled.label`
   font-weight: 700;
   color: ${colors.PRIMARY};
 `;
+
+export const StyledErrorLabel = styled.label`
+  margin-top: 4px;
+  ${typography.B1};
+  font-weight: 700;
+  color: ${colors.RED};
+`;

@@ -1,9 +1,12 @@
-
+import { StyledBooks, StyledHome, StyledTitle } from "./styles";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <StyledHome>
+      <StyledTitle>NEW RELEASES BOOKS</StyledTitle>
+      <StyledBooks></StyledBooks>
+    </StyledHome>
+  );
+};
 
-export default Home
+export default Home;

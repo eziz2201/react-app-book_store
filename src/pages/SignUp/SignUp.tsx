@@ -2,8 +2,10 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import { routes } from "../../routes/routes";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import {
   StyledContainer,
+  StyledErrorLabel,
   StyledForm,
   StyledInput,
   StyledLabel,
@@ -11,6 +13,9 @@ import {
   StyledTab,
   StyledTabs,
 } from "./styles";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../store/slices/userReducer";
+import { useState } from "react";
 
 interface ISign {
   name: string;
@@ -21,8 +26,24 @@ interface ISign {
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const { register, handleSubmit, reset } = useForm<ISign>();
-  const onSubmit = (data: ISign) => console.log(data);
+  const dispatch = useDispatch();
+  const [errorEmail, setErrorEmail] = useState("");
+  const { register, handleSubmit } = useForm<ISign>();
+  const onSubmit = (data: ISign) => {
+    if (data.password === data.confirmPassword) {
+      const auth = getAuth();
+      createUserWithEmailAndPassword(auth, data.email, data.password)
+        .then((userCredential) => {
+          dispatch(setUser(userCredential.user.email));
+          navigate(routes.ACCOUNT);
+        })
+        .catch((error) => {
+          setErrorEmail("Sorry, that email address is already used!");
+        });
+    } else {
+      alert("Password and confirm password does not match!");
+    }
+  };
   return (
     <StyledSign>
       <StyledTabs>
@@ -31,15 +52,6 @@ const SignUp = () => {
       </StyledTabs>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <StyledContainer>
-          <StyledLabel htmlFor="name">Name</StyledLabel>
-          <StyledInput
-            {...register("name")}
-            placeholder="Your name"
-            id="name"
-            type="text"
-          />
-        </StyledContainer>
-        <StyledContainer>
           <StyledLabel htmlFor="email">Email</StyledLabel>
           <StyledInput
             {...register("email")}
@@ -47,6 +59,11 @@ const SignUp = () => {
             id="email"
             type="email"
           />
+          {errorEmail !== "" ? (
+            <StyledErrorLabel htmlFor="email">{errorEmail}</StyledErrorLabel>
+          ) : (
+            <></>
+          )}
         </StyledContainer>
         <StyledContainer>
           <StyledLabel htmlFor="password">Password</StyledLabel>

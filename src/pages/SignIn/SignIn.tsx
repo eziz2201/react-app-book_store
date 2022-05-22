@@ -2,8 +2,10 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import { routes } from "../../routes/routes";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {
   StyledContainer,
+  StyledErrorLabel,
   StyledForm,
   StyledInput,
   StyledLabel,
@@ -11,6 +13,9 @@ import {
   StyledTab,
   StyledTabs,
 } from "./styles";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../store/slices/userReducer";
+import { useState } from "react";
 
 interface ISign {
   email: string;
@@ -19,8 +24,27 @@ interface ISign {
 
 const SignIn = () => {
   const navigate = useNavigate();
-  const { register, handleSubmit, reset } = useForm<ISign>();
-  const onSubmit = (data: ISign) => console.log(data);
+  const dispatch = useDispatch();
+  const [errorPassword, setErrorPassword] = useState("");
+  const [errorEmail, setErrorEmail] = useState("");
+  const { register, handleSubmit } = useForm<ISign>();
+  const onSubmit = (data: ISign) => {
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, data.email, data.password)
+      .then((userCredential) => {
+        dispatch(setUser(userCredential.user.email));
+        navigate(routes.ACCOUNT);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        if (errorCode === "auth/user-not-found") {
+          setErrorEmail("Sorry, that email address is incorrect!");
+        } else {
+          setErrorPassword("Sorry, that password is incorrect!");
+          setErrorEmail("");
+        }
+      });
+  };
   return (
     <StyledSign>
       <StyledTabs>
@@ -36,6 +60,11 @@ const SignIn = () => {
             id="email"
             type="email"
           />
+          {errorEmail !== "" ? (
+            <StyledErrorLabel htmlFor="email">{errorEmail}</StyledErrorLabel>
+          ) : (
+            <></>
+          )}
         </StyledContainer>
         <StyledContainer>
           <StyledLabel htmlFor="password">Password</StyledLabel>
@@ -47,6 +76,13 @@ const SignIn = () => {
             id="password"
             type="password"
           />
+          {errorPassword !== "" ? (
+            <StyledErrorLabel htmlFor="password">
+              {errorPassword}
+            </StyledErrorLabel>
+          ) : (
+            <></>
+          )}
         </StyledContainer>
         <Button text="SIGN IN" />
       </StyledForm>
