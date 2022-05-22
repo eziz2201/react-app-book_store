@@ -3,6 +3,7 @@ import { routes } from "../../routes/routes";
 import Input from "../Input/Input";
 import {
   StyledAccount,
+  StyledBurgerMenu,
   StyledCart,
   StyledContainer,
   StyledFavorites,
@@ -32,6 +33,9 @@ const NavBar = () => {
         <StyledAccount to={routes.ACCOUNT}>
           <SvgSelectors id="account" />
         </StyledAccount>
+        <StyledBurgerMenu>
+          <SvgSelectors id='burger-menu'/>
+        </StyledBurgerMenu>
       </StyledContainer>
     </StyledNavbar>
   );
