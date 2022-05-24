@@ -13,9 +13,9 @@ import {
   StyledTab,
   StyledTabs,
 } from "./styles";
-import { useDispatch } from "react-redux";
-import { setUser } from "../../store/slices/userReducer";
+import { setUser } from "../../store/slices/userSlice";
 import { useState } from "react";
+import { useAppDispatch } from "../../store/hooks/hooks";
 
 interface ISign {
   name: string;
@@ -26,9 +26,9 @@ interface ISign {
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [errorEmail, setErrorEmail] = useState("");
-  const [isConfirmCorrect, setIsConfirmCorrect] = useState(true);
+  const dispatch = useAppDispatch();
+  const [errorEmail, setErrorEmail] = useState<string>("");
+  const [isConfirmCorrect, setIsConfirmCorrect] = useState<boolean>(true);
   const { register, handleSubmit } = useForm<ISign>();
   const onSubmit = (data: ISign) => {
     if (data.password === data.confirmPassword) {

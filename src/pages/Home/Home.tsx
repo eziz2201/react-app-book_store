@@ -1,12 +1,9 @@
-import { StyledBooks, StyledHome, StyledTitle } from "./styles";
+import React from 'react'
 
 const Home = () => {
   return (
-    <StyledHome>
-      <StyledTitle>NEW RELEASES BOOKS</StyledTitle>
-      <StyledBooks></StyledBooks>
-    </StyledHome>
-  );
-};
+    <div>Home</div>
+  )
+}
 
-export default Home;
+export default Home

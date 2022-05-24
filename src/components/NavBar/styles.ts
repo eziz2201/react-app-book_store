@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { colors } from "../../ui/colors";
 import { media } from "../../ui/media";
+import { typography } from "../../ui/typography";
 
 export const StyledNavbar = styled.nav`
   padding: 24px 0;
@@ -66,5 +67,26 @@ export const StyledBurgerMenu = styled.div`
   display: none;
   ${media.TABLET} {
     display: block;
+  }
+`;
+
+export const StyledInput = styled.input`
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  border: 1px solid ${colors.GRAY};
+  ${typography.B1};
+  &::placeholder {
+    color: ${colors.SECONDARY};
+  }
+  &:focus {
+    outline: none;
+    border: 2px solid ${colors.GRAY};
+  }
+  &:active {
+    border: 1px solid ${colors.GRAY};
+  }
+  &:disabled {
+    background-color: ${colors.GRAY};
   }
 `;

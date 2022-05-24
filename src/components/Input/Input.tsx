@@ -4,7 +4,7 @@ interface IInput {
   placeholder: string,
 }
 
-const Input = ({placeholder}:IInput) => {
+const Input = ({ placeholder }: IInput) => {
   return <StyledInput placeholder={placeholder} type="text"></StyledInput>;
 };
 

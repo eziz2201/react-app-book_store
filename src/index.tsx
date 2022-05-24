@@ -4,7 +4,8 @@ import { Provider } from "react-redux";
 import App from "./App";
 import GlobalStyles from "./GlobalStyles";
 import store from "./store/store";
-import './firebase';
+import "./firebase";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const app = document.querySelector("#root");
 
