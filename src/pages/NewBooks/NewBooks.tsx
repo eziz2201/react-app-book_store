@@ -1,39 +1,32 @@
 import { useEffect } from "react";
 import BookItem from "../../components/BookItem/BookItem";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
-import { getNewBooks, getNewBooksError, getNewBooksStatus } from "../../store/selectors/newBooksSelectors";
+import {
+  getNewBooks,
+  getNewBooksError,
+  getNewBooksStatus,
+} from "../../store/selectors/newBooksSelectors";
 import { fetchNewBooks } from "../../store/slices/newBooksSlice";
 import { StyledBooks, StyledNewBooks, StyledTitle } from "./styles";
 
 const NewBooks = () => {
-  // const [newBooks, setNewBooks] = useState<INewBooksApi>({
-  //   books: [],
-  //   total: "",
-  //   error: null,
-  // });
   const newBooks = useAppSelector(getNewBooks);
   const status = useAppSelector(getNewBooksStatus);
   const error = useAppSelector(getNewBooksError);
 
   const dispatch = useAppDispatch();
-  console.log(newBooks)
+  console.log(newBooks);
 
-  // useEffect(() => {
-  //   bookApi.getNewBooks().then((books) => {
-  //     setNewBooks(books);
-  //   });
-  // });
   useEffect(() => {
-    dispatch(fetchNewBooks())
+    dispatch(fetchNewBooks());
   }, [dispatch]);
 
-  if (status === 'loading') {
-    return <div>Loading...</div>
+  if (status === "loading") {
+    return <div>Loading...</div>;
   }
-  if (status === 'error') {
-    return <div>Error: </div>
+  if (status === "error") {
+    return <div>Error: </div>;
   }
-
 
   return (
     <StyledNewBooks>
