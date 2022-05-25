@@ -1,9 +1,14 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import BookItem from "../../components/BookItem/BookItem";
-import { bookApi } from "../../services/bookServises";
-import { ISearchBooksApi } from "../../services/types/intex";
+import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
+import {
+  getSearchBooks,
+  getSearchBooksError,
+  getSearchBooksStatus,
+} from "../../store/selectors/SearchBooksSelectors";
+import { fetchSearchBooks } from "../../store/slices/SearchBooksSlice";
 import {
   StyledBooks,
   StyledSearch,
@@ -13,17 +18,16 @@ import {
 
 const Search = () => {
   const { title = "", page = "" } = useParams();
-  const [searchResult, setSearchResult] = useState<ISearchBooksApi>();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    bookApi.getBooksBySearch(title, page).then((books) => {
-      setSearchResult(books);
-    });
-  }, [title, page]);
+  const searchBooks = useAppSelector(getSearchBooks);
+  const status = useAppSelector(getSearchBooksStatus);
+  const error = useAppSelector(getSearchBooksError);
+
+  const dispatch = useAppDispatch();
 
   const handleNextPage = () => {
-    if (Number(page) === Math.round(Number(searchResult?.total) / 10)) {
+    if (Number(page) === Math.round(Number(searchBooks?.total) / 10)) {
       return;
     }
     navigate(`/search/${title}/${Number(page) + 1}`);
@@ -35,12 +39,23 @@ const Search = () => {
     }
     navigate(`/search/${title}/${Number(page) - 1}`);
   };
+
+  useEffect(() => {
+    dispatch(fetchSearchBooks({ title, page }));
+  }, [dispatch, title, page]);
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+  if (status === "error") {
+    return <div>Error: </div>;
+  }
   return (
     <StyledSearch>
       <StyledTitle>‘{title}’ SEARCH RESULTS</StyledTitle>
-      <StyledSubtitle>Found {searchResult?.total} books</StyledSubtitle>
+      <StyledSubtitle>Found {searchBooks?.total} books</StyledSubtitle>
       <StyledBooks>
-        {searchResult?.books.map((book) => {
+        {searchBooks.books.map((book: any) => {
           return (
             <BookItem
               image={book.image}
