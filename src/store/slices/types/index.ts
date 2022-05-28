@@ -1,4 +1,8 @@
-import { INewBookApi, INewBooksApi } from "../../../services/types/intex";
+import {
+  IBookDetailsApi,
+  INewBookApi,
+  INewBooksApi,
+} from "../../../services/types/intex";
 
 export interface IUserStrore {
   isAuth: boolean;
@@ -17,6 +21,12 @@ export interface ISearchBooksSlice {
     total: string;
     books: INewBookApi[];
   };
+  error: any;
+  status: RequestStatusType;
+}
+
+export interface IDetailsBookSlice {
+  results: IBookDetailsApi;
   error: any;
   status: RequestStatusType;
 }

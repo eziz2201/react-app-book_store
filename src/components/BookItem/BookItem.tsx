@@ -1,3 +1,4 @@
+import { INewBookApi } from "../../services/types/intex";
 import {
   StyledBookItem,
   StyledImg,
@@ -7,16 +8,20 @@ import {
   StyledTitle,
 } from "./styles";
 
-const BookItem = ({ image, title, isbn13, subtitle, price }: any) => {
+interface IBook {
+  book: INewBookApi
+}
+
+const BookItem = ({ book }: IBook) => {
   return (
-    <StyledBookItem to={"/books/" + isbn13} key={isbn13}>
-      <StyledImg src={image} alt={title} />
-      <StyledTitle>{title === "" ? "No title" : title}</StyledTitle>
-      <StyledIsbn>{isbn13 === "" ? "No isbn" : isbn13}</StyledIsbn>
+    <StyledBookItem to={"/books/" + book.isbn13} key={book.isbn13}>
+      <StyledImg src={book.image} alt={book.title} />
+      <StyledTitle>{book.title === "" ? "No title" : book.title}</StyledTitle>
+      <StyledIsbn>{book.isbn13 === "" ? "No isbn" : book.isbn13}</StyledIsbn>
       <StyledSubtitle>
-        {subtitle === "" ? "No subtitle" : subtitle}
+        {book.subtitle === "" ? "No subtitle" : book.subtitle}
       </StyledSubtitle>
-      <StyledPrice>{price === "" ? "For free" : price}</StyledPrice>
+      <StyledPrice>{book.price === "" ? "For free" : book.price}</StyledPrice>
     </StyledBookItem>
   );
 };

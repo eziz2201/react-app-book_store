@@ -1,6 +1,6 @@
 const PRIMARY = "#313037";
 
-const PRIMARY2 = "#5b5a62";
+const PRIMARYSECOND = "#5b5a62";
 
 const SECONDARY = "#a8a8a8";
 
@@ -22,7 +22,7 @@ const PURPLE = "#f4eefd";
 
 export const colors = {
   PRIMARY,
-  PRIMARY2,
+  PRIMARYSECOND,
   SECONDARY,
   WHITE,
   GRAY,

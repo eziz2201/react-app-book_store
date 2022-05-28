@@ -1,8 +1,8 @@
-interface ISvgSelectors {
+interface IIconSelector {
   id: string;
 }
 
-const SvgSelectors = ({ id }: ISvgSelectors) => {
+const IconSelector = ({ id }: IIconSelector) => {
   switch (id) {
     case "favorites":
       return (
@@ -16,9 +16,9 @@ const SvgSelectors = ({ id }: ISvgSelectors) => {
           <path
             d="M17.612 2.41452C17.1722 1.96607 16.65 1.61034 16.0752 1.36763C15.5005 1.12492 14.8844 1 14.2623 1C13.6401 1 13.0241 1.12492 12.4493 1.36763C11.8746 1.61034 11.3524 1.96607 10.9126 2.41452L9.99977 3.34476L9.08699 2.41452C8.19858 1.50912 6.99364 1.00047 5.73725 1.00047C4.48085 1.00047 3.27591 1.50912 2.38751 2.41452C1.4991 3.31992 1 4.5479 1 5.82833C1 7.10875 1.4991 8.33674 2.38751 9.24214L3.30029 10.1724L9.99977 17L16.6992 10.1724L17.612 9.24214C18.0521 8.79391 18.4011 8.26171 18.6393 7.67596C18.8774 7.0902 19 6.46237 19 5.82833C19 5.19428 18.8774 4.56645 18.6393 3.9807C18.4011 3.39494 18.0521 2.86275 17.612 2.41452V2.41452Z"
             stroke="#313037"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       );
@@ -32,8 +32,8 @@ const SvgSelectors = ({ id }: ISvgSelectors) => {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M11.6569 10.2426L7.41421 5.99999L11.6569 1.75735C12.0472 1.36702 12.0472 0.733456 11.6569 0.343133C11.2665 -0.0471895 10.633 -0.0471895 10.2426 0.343133L6 4.58577L1.75736 0.343133C1.36704 -0.0471895 0.733469 -0.0471895 0.343146 0.343133C-0.0471771 0.733456 -0.0471771 1.36702 0.343146 1.75735L4.58579 5.99999L0.343146 10.2426C-0.0478838 10.6337 -0.0471771 11.2665 0.343146 11.6568C0.733469 12.0472 1.36633 12.0479 1.75736 11.6568L6 7.4142L10.2426 11.6568C10.6337 12.0479 11.2665 12.0472 11.6569 11.6568C12.0472 11.2665 12.0479 10.6337 11.6569 10.2426Z"
             fill="#313037"
           />
@@ -96,14 +96,14 @@ const SvgSelectors = ({ id }: ISvgSelectors) => {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M19.71 18.29L15.18 13.76C16.32 12.31 17 10.48 17 8.5C17 3.81 13.19 0 8.5 0C3.81 0 0 3.81 0 8.5C0 13.19 3.81 17 8.5 17C10.48 17 12.31 16.32 13.76 15.18L18.29 19.71C18.49 19.9 18.74 20 19 20C19.26 20 19.51 19.9 19.71 19.71C20.1 19.32 20.1 18.68 19.71 18.29"
             fill="#4C4B5E"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M2 8.5C2 4.92 4.92 2 8.5 2C12.08 2 15 4.92 15 8.5C15 10.29 14.27 11.92 13.09 13.09C11.92 14.27 10.29 15 8.5 15C4.92 15 2 12.08 2 8.5"
             fill="white"
           />
@@ -121,16 +121,16 @@ const SvgSelectors = ({ id }: ISvgSelectors) => {
           <path
             d="M3.1 1L1 17.3929C1 17.8191 1.15979 18.2279 1.44422 18.5293C1.72865 18.8307 2.11442 19 2.51667 19H17.4833C17.8856 19 18.2713 18.8307 18.5558 18.5293C18.8402 18.2279 19 17.8191 19 17.3929L16.9 1H3.1Z"
             stroke="#313037"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M13 7C13 7.53043 12.6839 8.03914 12.1213 8.41421C11.5587 8.78929 10.7956 9 10 9C9.20435 9 8.44129 8.78929 7.87868 8.41421C7.31607 8.03914 7 7.53043 7 7"
             stroke="#313037"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       );
@@ -146,16 +146,16 @@ const SvgSelectors = ({ id }: ISvgSelectors) => {
           <path
             d="M17 19V17C17 15.9391 16.5786 14.9217 15.8284 14.1716C15.0783 13.4214 14.0609 13 13 13H5C3.93913 13 2.92172 13.4214 2.17157 14.1716C1.42143 14.9217 1 15.9391 1 17V19"
             stroke="#313037"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M9 9C11.2091 9 13 7.20914 13 5C13 2.79086 11.2091 1 9 1C6.79086 1 5 2.79086 5 5C5 7.20914 6.79086 9 9 9Z"
             stroke="#313037"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       );
@@ -174,7 +174,7 @@ const SvgSelectors = ({ id }: ISvgSelectors) => {
             r="5"
             fill="#FC857F"
             stroke="white"
-            stroke-width="2"
+            strokeWidth="2"
           />
         </svg>
       );
@@ -188,29 +188,28 @@ const SvgSelectors = ({ id }: ISvgSelectors) => {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M19 8H1C0.448 8 0 7.552 0 7C0 6.448 0.448 6 1 6H19C19.553 6 20 6.448 20 7C20 7.552 19.553 8 19 8"
             fill="black"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M19 2H1C0.448 2 0 1.552 0 1C0 0.448 0.448 0 1 0H19C19.553 0 20 0.448 20 1C20 1.552 19.553 2 19 2"
             fill="black"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M19 14H1C0.448 14 0 13.553 0 13C0 12.447 0.448 12 1 12H19C19.553 12 20 12.447 20 13C20 13.553 19.553 14 19 14"
             fill="black"
           />
         </svg>
       );
     default:
-      return <svg></svg>;
-      break;
+      return <></>;
   }
 };
 
-export default SvgSelectors;
+export default IconSelector;
