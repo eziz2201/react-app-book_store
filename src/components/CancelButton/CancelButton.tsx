@@ -1,10 +1,10 @@
-import SvgSelectors from "../../assets/SvgSelectors";
+import IconSelector from "../IconSelector/IconSelector";
 import { StyledButton } from "./styles";
 
 const CancelButton = () => {
   return (
     <StyledButton>
-      <SvgSelectors id="cancel" />
+      <IconSelector id="cancel" />
     </StyledButton>
   );
 };

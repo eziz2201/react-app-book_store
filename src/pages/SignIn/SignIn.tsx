@@ -33,7 +33,7 @@ const SignIn = () => {
     signInWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
         dispatch(setUser(userCredential.user.email));
-        navigate(routes.ACCOUNT);
+        navigate(`/${routes.ACCOUNT}`);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -49,7 +49,7 @@ const SignIn = () => {
     <StyledSign>
       <StyledTabs>
         <StyledTab>SIGN IN</StyledTab>
-        <StyledTab onClick={() => navigate(routes.SIGN_UP)}>SIGN UP</StyledTab>
+        <StyledTab onClick={() => navigate(`/${routes.SIGN_UP}`)}>SIGN UP</StyledTab>
       </StyledTabs>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <StyledContainer>

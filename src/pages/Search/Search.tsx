@@ -5,10 +5,9 @@ import BookItem from "../../components/BookItem/BookItem";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import {
   getSearchBooks,
-  getSearchBooksError,
   getSearchBooksStatus,
-} from "../../store/selectors/SearchBooksSelectors";
-import { fetchSearchBooks } from "../../store/slices/SearchBooksSlice";
+} from "../../store/selectors/searchBooksSelectors";
+import { fetchSearchBooks } from "../../store/slices/searchBooksSlice";
 import {
   StyledBooks,
   StyledSearch,
@@ -22,7 +21,6 @@ const Search = () => {
 
   const searchBooks = useAppSelector(getSearchBooks);
   const status = useAppSelector(getSearchBooksStatus);
-  const error = useAppSelector(getSearchBooksError);
 
   const dispatch = useAppDispatch();
 
@@ -55,16 +53,8 @@ const Search = () => {
       <StyledTitle>‘{title}’ SEARCH RESULTS</StyledTitle>
       <StyledSubtitle>Found {searchBooks?.total} books</StyledSubtitle>
       <StyledBooks>
-        {searchBooks.books.map((book: any) => {
-          return (
-            <BookItem
-              image={book.image}
-              title={book.title}
-              isbn13={book.isbn13}
-              subtitle={book.subtitle}
-              price={book.price}
-            />
-          );
+        {searchBooks.books.map((book) => {
+          return <BookItem key={book.isbn13} book={book} />;
         })}
       </StyledBooks>
       <div>

@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { bookApi } from "../../services/bookServises";
-import { INewBooksApi, ISearchBooksApi } from "../../services/types/intex";
-import { ISearchBooksSlice } from "./types";
+import { ISearchBooksApi } from "../../services/types/intex";
+import { INewBooksSlice, ISearchBooksSlice } from "./types";
 
-interface IArg {
+interface IArguments {
   title: string;
   page: string;
 }
@@ -18,9 +18,9 @@ const initialState: ISearchBooksSlice = {
   status: "idle",
 };
 
-export const fetchSearchBooks = createAsyncThunk(
+export const fetchSearchBooks = createAsyncThunk<ISearchBooksApi, IArguments>(
   "searchBooks/fetchSearchBooks",
-  async ({ title, page }: IArg) => {
+  async ({ title, page }) => {
     return await bookApi.getBooksBySearch(title, page);
   }
 );

@@ -36,7 +36,7 @@ const SignUp = () => {
       createUserWithEmailAndPassword(auth, data.email, data.password)
         .then((userCredential) => {
           dispatch(setUser(userCredential.user.email));
-          navigate(routes.ACCOUNT);
+          navigate(`/${routes.ACCOUNT}`);
         })
         .catch((error) => {
           setErrorEmail("Sorry, that email address is already used!");
@@ -48,7 +48,7 @@ const SignUp = () => {
   return (
     <StyledSign>
       <StyledTabs>
-        <StyledTab onClick={() => navigate(routes.SIGN_IN)}>SIGN IN</StyledTab>
+        <StyledTab onClick={() => navigate(`/${routes.SIGN_IN}`)}>SIGN IN</StyledTab>
         <StyledTab>SIGN UP</StyledTab>
       </StyledTabs>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>

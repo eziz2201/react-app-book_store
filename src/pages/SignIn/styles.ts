@@ -41,7 +41,7 @@ export const StyledTab = styled.div`
     color: ${colors.PRIMARY};
   }
   &:last-child:hover {
-    color: ${colors.PRIMARY2};
+    color: ${colors.PRIMARYSECOND};
   }
 `;
 

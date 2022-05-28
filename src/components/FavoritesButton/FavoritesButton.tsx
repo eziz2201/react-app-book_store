@@ -1,10 +1,10 @@
-import SvgSelectors from "../../assets/SvgSelectors";
+import IconSelector from "../IconSelector/IconSelector";
 import { StyledButton } from "./styles";
 
 const FavoritesButton = () => {
   return (
     <StyledButton>
-      <SvgSelectors id="favorites" />
+      <IconSelector id="favorites" />
     </StyledButton>
   );
 };

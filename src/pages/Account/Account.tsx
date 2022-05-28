@@ -10,7 +10,7 @@ const Account = () => {
   if (isAuth) {
     return <StyledAccount>{email}</StyledAccount>;
   }
-  return <Navigate to={routes.SIGN_UP} />;
+  return <Navigate to={`/${routes.SIGN_UP}`} />;
 };
 
 export default Account;
