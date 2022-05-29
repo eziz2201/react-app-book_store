@@ -22,7 +22,7 @@ export const StyledTitle = styled.h1`
 `;
 
 export const StyledText = styled.p`
-text-align: center;
+  text-align: center;
   ${typography.H3}
   color: ${colors.PRIMARY};
-`
+`;
