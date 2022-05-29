@@ -7,6 +7,9 @@ export const StyledButton = styled.button`
   align-items: center;
   border: none;
   padding: 16px;
+  path {
+    stroke: ${colors.WHITE};
+  }
   background-color: ${colors.PRIMARY};
   &:hover {
     path {

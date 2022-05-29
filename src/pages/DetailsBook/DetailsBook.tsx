@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "../../components/Button/Button";
+import FavoritesButton from "../../components/FavoritesButton/FavoritesButton";
 import IconSelector from "../../components/IconSelector/IconSelector";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import {
@@ -8,7 +9,10 @@ import {
   getDetailsBookStatus,
 } from "../../store/selectors/detailsBookSelectors";
 import { fetchBookDetails } from "../../store/slices/detailsBooksSlice";
+import { addFavorite } from "../../store/slices/favoriteBooksSlice";
+import { IFavoriteBook } from "../../store/slices/types";
 import {
+  StyledAddFovorite,
   StyledArrowDown,
   StyledBackButton,
   StyledBookImage,
@@ -53,6 +57,19 @@ const DetailsBook = () => {
     setActive("authors");
   };
 
+  const handleFavorite = (detailsBook: IFavoriteBook) => {
+    dispatch(
+      addFavorite({
+        image: detailsBook.image,
+        title: detailsBook.title,
+        authors: detailsBook.authors,
+        year: detailsBook.year,
+        price: detailsBook.price,
+        isbn13: detailsBook.isbn13,
+      })
+    );
+  };
+
   if (status === "loading") {
     return <div>Loading...</div>;
   }
@@ -69,10 +86,13 @@ const DetailsBook = () => {
         {detailsBook?.title ? detailsBook.title : "No Title"}
       </StyledTitle>
       <StyledMainCointainer>
-        <StyledBookImage
-          src={detailsBook.image}
-          alt={detailsBook.image}
-        ></StyledBookImage>
+        <StyledBookImage>
+          <img src={detailsBook.image} alt={detailsBook.image} />
+          <StyledAddFovorite onClick={() => handleFavorite(detailsBook)}>
+            <FavoritesButton />
+          </StyledAddFovorite>
+        </StyledBookImage>
+
         <StyledBookInfo>
           <StyledPrice>
             {detailsBook.price} <StyledRaiting>{"*****"}</StyledRaiting>
@@ -112,8 +132,8 @@ const DetailsBook = () => {
         {active === "description"
           ? detailsBook.desc
           : active === "authors"
-            ? detailsBook.authors
-            : "oops"}
+          ? detailsBook.authors
+          : "oops"}
       </StyledTabPanel>
       <StyledIcons>
         <StyledIconsItem href="https://facebook.com">

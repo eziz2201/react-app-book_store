@@ -33,6 +33,11 @@ export const StyledSearch = styled.div`
 
 export const StyledFavorites = styled(NavLink)`
   position: relative;
+  ${media.TABLET} {
+    display: none;
+  }
+`;
+export const StyledRedCircle = styled.div`
   svg:last-child {
     position: absolute;
     top: -2px;

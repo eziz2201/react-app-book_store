@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { bookApi } from "../../services/bookServises";
+import { IBookDetailsApi } from "../../services/types/intex";
 import { IDetailsBookSlice } from "./types";
 
 const initialState: IDetailsBookSlice = {
@@ -25,7 +26,7 @@ const initialState: IDetailsBookSlice = {
   status: "idle",
 };
 
-export const fetchBookDetails = createAsyncThunk<any, string>(
+export const fetchBookDetails = createAsyncThunk<IBookDetailsApi, string>(
   "detailsBook/fetchBookDetails",
   async (isbn) => {
     return await bookApi.getBookDetails(isbn);

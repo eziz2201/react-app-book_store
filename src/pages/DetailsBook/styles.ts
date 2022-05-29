@@ -3,7 +3,7 @@ import { colors } from "../../ui/colors";
 import { typography } from "../../ui/typography";
 
 interface IButton {
-    isActive: boolean;
+  isActive: boolean;
 }
 
 export const StyledDetailsBook = styled.div``;
@@ -27,11 +27,22 @@ export const StyledMainCointainer = styled.div`
   margin-bottom: 72px;
 `;
 
-export const StyledBookImage = styled.img`
+export const StyledBookImage = styled.div`
+  position: relative;
+
   height: 472px;
   max-width: 544px;
   width: 100%;
   background-color: yellow;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+`;
+export const StyledAddFovorite = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
 `;
 
 export const StyledBookInfo = styled.div`
@@ -98,11 +109,11 @@ export const StyledTab = styled.button<IButton>`
   }
 
   border-bottom: ${({ isActive }) =>
-        isActive
-            ? `2px solid ${colors.PRIMARY};
+    isActive
+      ? `2px solid ${colors.PRIMARY};
     color: ${colors.PRIMARY};
     `
-            : ""};
+      : ""};
 `;
 
 export const StyledTabPanel = styled.div`
