@@ -31,4 +31,17 @@ export interface IDetailsBookSlice {
   status: RequestStatusType;
 }
 
+export interface IFavoriteBook {
+  image: string;
+  title: string;
+  authors: string;
+  year: string;
+  price: string;
+  isbn13: string;
+}
+
+export interface IFavoriteBooksSlice {
+  results: IFavoriteBook[];
+}
+
 export type RequestStatusType = "idle" | "loading" | "success" | "error";
