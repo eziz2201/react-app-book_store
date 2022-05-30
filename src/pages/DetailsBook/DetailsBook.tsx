@@ -12,7 +12,7 @@ import {
 import { addCart } from "../../store/slices/cartSlice";
 import { fetchBookDetails } from "../../store/slices/detailsBooksSlice";
 import { addFavorite } from "../../store/slices/favoriteBooksSlice";
-import { ICart, IFavoriteBook } from "../../store/slices/types";
+import { IFavoriteBook } from "../../store/slices/types";
 import {
   StyledAddFovorite,
   StyledArrowDown,

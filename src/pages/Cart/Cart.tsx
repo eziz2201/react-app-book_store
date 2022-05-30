@@ -1,11 +1,15 @@
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import CartBook from "../../components/CartBook/CartBook";
-import FavoriteBook from "../../components/FavoriteBook/FavoriteBook";
+
 import IconSelector from "../../components/IconSelector/IconSelector";
 import { useAppSelector } from "../../store/hooks/hooks";
-import { getCarts } from "../../store/selectors/cartSelectors";
-import { ICart } from "../../store/slices/types";
+import {
+  getCarts,
+  getSumTotalCarts,
+  getTotalCarts,
+  getVatCarts,
+} from "../../store/selectors/cartSelectors";
+
 import {
   StyledBackButton,
   StyledCart,
@@ -14,13 +18,12 @@ import {
 } from "./styles";
 
 const Cart = () => {
-  const carts: ICart[] = useAppSelector(getCarts);
-  const dispatch = useDispatch();
+  const carts = useAppSelector(getCarts);
+  const sumTotal = useAppSelector(getSumTotalCarts);
+  const vat = useAppSelector(getVatCarts);
+  const total = useAppSelector(getTotalCarts);
   const navigate = useNavigate();
-  const totalPrice = carts.reduce(
-    (total, { totalPrice }) => total + Number(totalPrice),
-    0
-  );
+  
 
   const handleBack = () => {
     navigate(-1);
@@ -36,17 +39,11 @@ const Cart = () => {
       ) : (
         carts.map((book) => <CartBook key={book.isbn13} book={book} />)
       )}
-      <p>totalPrice: {totalPrice}</p>
+      <p>sumTotal: {sumTotal}</p>
+      <p>vat: {vat}</p>
+      <p>totalPrice: {total}</p>
+      
     </StyledCart>
-    // <div>{carts.map((book) => (
-    //   <ul key={book.isbn13} >
-    //     <li>{book.title}</li>
-    //     <li>{book.price}</li>
-    //     <li><button>-</button>{}<button>+</button></li>
-    //   </ul>
-    // ))}
-    // <h2>totalPrice:  ${totalPrice}</h2>
-    // </div>
   );
 };
 

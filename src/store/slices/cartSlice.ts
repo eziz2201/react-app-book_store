@@ -22,9 +22,13 @@ const cartSlice = createSlice({
         { ...payload },
         ...state.results.filter((book) => book.isbn13 !== payload.isbn13),
       ];
-      state.total = state.results.reduce(
-        (total, { totalPrice }) => total + Number(totalPrice),
-        0
+      state.total = Math.round(
+        (state.results.reduce(
+          (total, { totalPrice }) => total + Number(totalPrice),
+          0
+        ) *
+          100) /
+          100
       );
       state.vat = parseFloat(((state.total / 100) * 10).toFixed(2));
       state.sumTotal = parseFloat((state.total - state.vat).toFixed(2));
@@ -33,11 +37,16 @@ const cartSlice = createSlice({
       state.results = state.results.filter(
         (book) => book.isbn13 !== payload.isbn13
       );
-      state.total = state.results.reduce(
-        (total, { totalPrice }) => total + Number(totalPrice),
-        0
+      state.total = Math.round(
+        (state.results.reduce(
+          (total, { totalPrice }) => total + Number(totalPrice),
+          0
+        ) *
+          100) /
+          100
       );
       state.vat = parseFloat(((state.total / 100) * 10).toFixed(2));
+      state.sumTotal = parseFloat((state.total - state.vat).toFixed(2));
     },
     updateQuantity: (state, { payload }: PayloadAction<IQuantity>) => {
       const { isbn13, value } = payload;
@@ -49,11 +58,16 @@ const cartSlice = createSlice({
           ).toFixed(2);
         }
       });
-      state.total = state.results.reduce(
-        (total, { totalPrice }) => total + Number(totalPrice),
-        0
+      state.total = Math.round(
+        (state.results.reduce(
+          (total, { totalPrice }) => total + Number(totalPrice),
+          0
+        ) *
+          100) /
+          100
       );
       state.vat = parseFloat(((state.total / 100) * 10).toFixed(2));
+      state.sumTotal = parseFloat((state.total - state.vat).toFixed(2));
     },
   },
 });
