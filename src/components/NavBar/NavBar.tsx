@@ -6,17 +6,19 @@ import {
   StyledAccount,
   StyledBurgerMenu,
   StyledCart,
+  StyledCartCircle,
   StyledContainer,
+  StyledFavoriteCircle,
   StyledFavorites,
   StyledInput,
   StyledLogo,
   StyledNavbar,
-  StyledRedCircle,
   StyledSearch,
 } from "./styles";
 import { getFavoriteBooks } from "../../store/selectors/favoriteBooksSelectors";
 import { useAppSelector } from "../../store/hooks/hooks";
-import { IFavoriteBook } from "../../store/slices/types";
+import { ICart, IFavoriteBook } from "../../store/slices/types";
+import { getCarts } from "../../store/selectors/cartSelectors";
 interface IData {
   title: string;
 }
@@ -25,6 +27,7 @@ const NavBar = () => {
   const { register, handleSubmit } = useForm<IData>();
   const navigate = useNavigate();
   const favoriteBooks: IFavoriteBook[] = useAppSelector(getFavoriteBooks);
+  const carts: ICart[] = useAppSelector(getCarts);
   const onSubmit = (data: IData) => {
     navigate(`search/${data.title}/1`);
   };
@@ -48,15 +51,22 @@ const NavBar = () => {
         <StyledFavorites to={routes.FAVORITES}>
           <IconSelector id="favorites" />
           {favoriteBooks.length != 0 ? (
-            <StyledRedCircle>
+            <StyledFavoriteCircle>
               <IconSelector id="red-circle" />
-            </StyledRedCircle>
+            </StyledFavoriteCircle>
           ) : (
             <></>
           )}
         </StyledFavorites>
         <StyledCart to={routes.CART}>
           <IconSelector id="cart" />
+          {carts.length != 0 ? (
+            <StyledCartCircle>
+              <IconSelector id="red-circle" />
+            </StyledCartCircle>
+          ) : (
+            <></>
+          )}
         </StyledCart>
         <StyledAccount to={routes.ACCOUNT}>
           <IconSelector id="account" />

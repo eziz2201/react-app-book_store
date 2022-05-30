@@ -3,14 +3,16 @@ import { useNavigate, useParams } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import FavoritesButton from "../../components/FavoritesButton/FavoritesButton";
 import IconSelector from "../../components/IconSelector/IconSelector";
+import { IBookDetailsApi } from "../../services/types/intex";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import {
   getDetailsBook,
   getDetailsBookStatus,
 } from "../../store/selectors/detailsBookSelectors";
+import { addCart } from "../../store/slices/cartSlice";
 import { fetchBookDetails } from "../../store/slices/detailsBooksSlice";
 import { addFavorite } from "../../store/slices/favoriteBooksSlice";
-import { IFavoriteBook } from "../../store/slices/types";
+import { ICart, IFavoriteBook } from "../../store/slices/types";
 import {
   StyledAddFovorite,
   StyledArrowDown,
@@ -69,6 +71,20 @@ const DetailsBook = () => {
       })
     );
   };
+  const handleCart = (detailsBook: IBookDetailsApi) => {
+    dispatch(
+      addCart({
+        image: detailsBook.image,
+        title: detailsBook.title,
+        authors: detailsBook.authors,
+        year: detailsBook.year,
+        price: detailsBook.price,
+        isbn13: detailsBook.isbn13,
+        quantity: 1,
+        totalPrice: detailsBook.price.slice(1),
+      })
+    );
+  };
 
   if (status === "loading") {
     return <div>Loading...</div>;
@@ -112,7 +128,7 @@ const DetailsBook = () => {
           <StyledArrowDown>
             More details <IconSelector id="arrow-down"></IconSelector>
           </StyledArrowDown>
-          <StyledButtonContainer>
+          <StyledButtonContainer onClick={() => handleCart(detailsBook)}>
             <Button text="ADD TO CART"></Button>
           </StyledButtonContainer>
         </StyledBookInfo>
