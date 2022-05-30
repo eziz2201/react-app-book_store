@@ -62,9 +62,6 @@ export const StyledCartCircle = styled.div`
     top: -2px;
     right: -2px;
   }
-  ${media.TABLET} {
-    display: none;
-  }
 `;
 
 export const StyledContainer = styled.div`

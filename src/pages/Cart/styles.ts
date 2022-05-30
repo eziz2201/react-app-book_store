@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { colors } from "../../ui/colors";
+import { media } from "../../ui/media";
 import { typography } from "../../ui/typography";
 
-export const StyledCart = styled.div`
+const StyledCart = styled.div`
   min-height: 60vh;
   height: 100%;
 `;
-export const StyledBackButton = styled.div`
+const StyledBackButton = styled.div`
   margin-top: 77px;
   cursor: pointer;
   path {
@@ -14,15 +15,67 @@ export const StyledBackButton = styled.div`
   }
 `;
 
-export const StyledTitle = styled.h1`
+const StyledTitle = styled.h1`
   margin-top: 37px;
   margin-bottom: 50px;
   ${typography.H1}
   color: ${colors.PRIMARY};
 `;
 
-export const StyledText = styled.p`
+const StyledText = styled.p`
   text-align: center;
   ${typography.H3}
   color: ${colors.PRIMARY};
 `;
+
+const StyledCheckList = styled.div`
+  width: 256px;
+  margin-top: 48px;
+  margin-bottom: 72px;
+  margin-left: auto;
+  ${media.TABLET} {
+    width: 328px;
+  }
+  ${media.PHONE} {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 56px;
+  }
+`;
+
+const StyledCheckItem = styled.p`
+  display: flex;
+  justify-content: space-between;
+  ${typography.TAB};
+  color: ${colors.SECONDARY};
+  &:first-child {
+    margin-bottom: 16px;
+  }
+  span {
+    color: ${colors.PRIMARY};
+  }
+`;
+
+const StyledCheckTotal = styled.h2`
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0;
+  ${typography.H2};
+  color: ${colors.PRIMARY};
+`;
+
+const StyledCheckButton = styled.button`
+  width: 100%;
+  background-color: ${colors.WHITE};
+`;
+
+export {
+  StyledCheckButton,
+  StyledCheckItem,
+  StyledCheckList,
+  StyledCheckTotal,
+  StyledBackButton,
+  StyledCart,
+  StyledText,
+  StyledTitle,
+};
