@@ -3,9 +3,9 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import App from "./App";
 import GlobalStyles from "./GlobalStyles";
-import store from "./store/store";
+import store, { persistor } from "./store/store";
 import "./firebase";
-
+import { PersistGate } from "redux-persist/integration/react";
 
 const app = document.querySelector("#root");
 
@@ -17,8 +17,10 @@ const root = createRoot(app);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <GlobalStyles />
-      <App />
+      <PersistGate loading={null} persistor={persistor}>
+        <GlobalStyles />
+        <App />
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 );
