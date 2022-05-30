@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import cartSlice from "./slices/cartSlice";
 import detailsBooksSlice from "./slices/detailsBooksSlice";
 import favoriteBooksSlice from "./slices/favoriteBooksSlice";
 import newBooksSlice from "./slices/newBooksSlice";
@@ -13,6 +14,7 @@ const store = configureStore({
     searchBooks: searchBooksSlice,
     detailsBook: detailsBooksSlice,
     favoriteBook: favoriteBooksSlice,
+    cart: cartSlice,
   },
 });
 

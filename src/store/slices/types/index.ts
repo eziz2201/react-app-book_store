@@ -44,4 +44,16 @@ export interface IFavoriteBooksSlice {
   results: IFavoriteBook[];
 }
 
+export interface ICart extends IFavoriteBook {
+  quantity: number;
+  totalPrice: string;
+}
+
+export interface ICartSlice {
+  results: ICart[];
+  vat: number;
+  sumTotal: number;
+  total: number;
+}
+
 export type RequestStatusType = "idle" | "loading" | "success" | "error";
