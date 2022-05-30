@@ -37,7 +37,7 @@ export const StyledFavorites = styled(NavLink)`
     display: none;
   }
 `;
-export const StyledRedCircle = styled.div`
+export const StyledFavoriteCircle = styled.div`
   svg:last-child {
     position: absolute;
     top: -2px;
@@ -47,8 +47,21 @@ export const StyledRedCircle = styled.div`
     display: none;
   }
 `;
-export const StyledCart = styled(NavLink)``;
+export const StyledCart = styled(NavLink)`
+  position: relative;
+`;
 export const StyledAccount = styled(NavLink)`
+  ${media.TABLET} {
+    display: none;
+  }
+`;
+
+export const StyledCartCircle = styled.div`
+  svg:last-child {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+  }
   ${media.TABLET} {
     display: none;
   }
