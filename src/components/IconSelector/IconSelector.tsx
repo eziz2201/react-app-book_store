@@ -178,7 +178,7 @@ const IconSelector = ({ id }: IIconSelector) => {
           />
         </svg>
       );
-    case "burger-menu":
+    case "burger-open":
       return (
         <svg
           width="20"

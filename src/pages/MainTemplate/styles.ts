@@ -1,8 +1,13 @@
 import styled from "styled-components";
-import { Breakpoint } from "../../ui/breakpoints";
 
 export const StyledMainTemplate = styled.div`
-  max-width: ${Breakpoint.XL}px;
+  max-width: 1920px;
+  width: 100%;
+`;
+
+export const Container = styled.div`
+  max-width: 1160px;
   padding: 0 20px;
+  width: 100%;
   margin: 0 auto;
 `;

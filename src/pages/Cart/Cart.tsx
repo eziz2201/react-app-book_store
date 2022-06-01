@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Button from "../../components/Button/Button";
 import CartBook from "../../components/CartBook/CartBook";
 
 import IconSelector from "../../components/IconSelector/IconSelector";
@@ -13,6 +14,10 @@ import {
 import {
   StyledBackButton,
   StyledCart,
+  StyledCheckButton,
+  StyledCheckItem,
+  StyledCheckList,
+  StyledCheckTotal,
   StyledText,
   StyledTitle,
 } from "./styles";
@@ -23,7 +28,6 @@ const Cart = () => {
   const vat = useAppSelector(getVatCarts);
   const total = useAppSelector(getTotalCarts);
   const navigate = useNavigate();
-  
 
   const handleBack = () => {
     navigate(-1);
@@ -33,16 +37,26 @@ const Cart = () => {
       <StyledBackButton onClick={handleBack}>
         <IconSelector id="back" />
       </StyledBackButton>
-      <StyledTitle>CART</StyledTitle>
+      <StyledTitle>YOUR CART</StyledTitle>
       {carts.length === 0 ? (
         <StyledText>Your cart is empty!</StyledText>
       ) : (
         carts.map((book) => <CartBook key={book.isbn13} book={book} />)
       )}
-      <p>sumTotal: {sumTotal}</p>
-      <p>vat: {vat}</p>
-      <p>totalPrice: {total}</p>
-      
+      <StyledCheckList>
+        <StyledCheckItem>
+          Sum total<span>$ {sumTotal}</span>
+        </StyledCheckItem>
+        <StyledCheckItem>
+          VAT<span>$ {vat}</span>
+        </StyledCheckItem>
+        <StyledCheckTotal>
+          Total:<span>${total}</span>
+        </StyledCheckTotal>
+        <StyledCheckButton>
+          <Button text="check out" />
+        </StyledCheckButton>
+      </StyledCheckList>
     </StyledCart>
   );
 };
