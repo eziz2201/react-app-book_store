@@ -21,6 +21,8 @@ export interface ISearchBooksSlice {
     total: string;
     books: INewBookApi[];
   };
+  totalPage: number,
+  currentPage: number,
   error: any;
   status: RequestStatusType;
 }
