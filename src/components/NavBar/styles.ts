@@ -4,7 +4,7 @@ import { colors } from "../../ui/colors";
 import { media } from "../../ui/media";
 import { typography } from "../../ui/typography";
 
-export const StyledNavbar = styled.nav`
+const StyledNavbar = styled.nav`
   padding: 24px 0;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -14,8 +14,8 @@ export const StyledNavbar = styled.nav`
     grid-template-columns: 1fr 1fr;
   }
 `;
-export const StyledLogo = styled(NavLink)``;
-export const StyledSearch = styled.div`
+const StyledLogo = styled(NavLink)``;
+const StyledSearch = styled.div`
   position: relative;
   max-width: 542px;
   width: 100%;
@@ -31,13 +31,13 @@ export const StyledSearch = styled.div`
   }
 `;
 
-export const StyledFavorites = styled(NavLink)`
+const StyledFavorites = styled(NavLink)`
   position: relative;
   ${media.TABLET} {
     display: none;
   }
 `;
-export const StyledFavoriteCircle = styled.div`
+const StyledFavoriteCircle = styled.div`
   svg:last-child {
     position: absolute;
     top: -2px;
@@ -47,16 +47,16 @@ export const StyledFavoriteCircle = styled.div`
     display: none;
   }
 `;
-export const StyledCart = styled(NavLink)`
+const StyledCart = styled(NavLink)`
   position: relative;
 `;
-export const StyledAccount = styled(NavLink)`
+const StyledAccount = styled(NavLink)`
   ${media.TABLET} {
     display: none;
   }
 `;
 
-export const StyledCartCircle = styled.div`
+const StyledCartCircle = styled.div`
   svg:last-child {
     position: absolute;
     top: -2px;
@@ -64,7 +64,7 @@ export const StyledCartCircle = styled.div`
   }
 `;
 
-export const StyledContainer = styled.div`
+const StyledContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 46px;
@@ -78,14 +78,14 @@ export const StyledContainer = styled.div`
   }
 `;
 
-export const StyledBurgerMenu = styled.div`
+const StyledBurgerOpen = styled.div`
   display: none;
   ${media.TABLET} {
     display: block;
   }
 `;
 
-export const StyledInput = styled.input`
+const StyledInput = styled.input`
   width: 100%;
   height: 56px;
   padding: 0 20px;
@@ -105,3 +105,17 @@ export const StyledInput = styled.input`
     background-color: ${colors.GRAY};
   }
 `;
+
+export {
+  StyledAccount,
+  StyledBurgerOpen,
+  StyledCart,
+  StyledCartCircle,
+  StyledContainer,
+  StyledFavoriteCircle,
+  StyledFavorites,
+  StyledInput,
+  StyledLogo,
+  StyledNavbar,
+  StyledSearch,
+};

@@ -67,6 +67,13 @@ const BUTTON = css`
   line-height: 24px;
 `;
 
+const BURGER_MENU = css`
+  font-family: "Bebas Neue";
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+`;
+
 export const typography = {
   H1,
   H2,
@@ -76,4 +83,5 @@ export const typography = {
   B2,
   TAB,
   BUTTON,
+  BURGER_MENU,
 };
