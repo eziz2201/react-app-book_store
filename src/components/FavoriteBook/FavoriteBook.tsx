@@ -32,15 +32,14 @@ const FavoriteBook = ({ book }: IBook) => {
         <StyledText>
           by {book.authors}, {book.year}
         </StyledText>
-        <StyledText>{book.isbn13}</StyledText>
         <StyledPrice>
           {book.price}
           <StyledRaiting>*****</StyledRaiting>
         </StyledPrice>
-        <StyledRemoveFavoriteButton onClick={handleRemoveFavorite}>
-          <IconSelector id="favorites" />
-        </StyledRemoveFavoriteButton>
       </StyledBookInfo>
+      <StyledRemoveFavoriteButton onClick={handleRemoveFavorite}>
+        <IconSelector id="favorites" />
+      </StyledRemoveFavoriteButton>
     </StyledFavoriteBook>
   );
 };
