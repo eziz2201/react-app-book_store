@@ -2,12 +2,17 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import BookItem from "../../components/BookItem/BookItem";
+import PageControl from "../../components/PageControl/PageControl";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import {
   getSearchBooks,
   getSearchBooksStatus,
+  getSearchBooksTotalPage,
 } from "../../store/selectors/searchBooksSelectors";
-import { fetchSearchBooks } from "../../store/slices/searchBooksSlice";
+import {
+  fetchSearchBooks,
+  setCurrentPage,
+} from "../../store/slices/searchBooksSlice";
 import {
   StyledBooks,
   StyledSearch,
@@ -21,11 +26,16 @@ const Search = () => {
 
   const searchBooks = useAppSelector(getSearchBooks);
   const status = useAppSelector(getSearchBooksStatus);
+  const totalPage = useAppSelector(getSearchBooksTotalPage);
 
   const dispatch = useAppDispatch();
 
+  const handlePage = (item: number) => {
+    navigate(`/search/${title}/${item}`);
+  };
+
   const handleNextPage = () => {
-    if (Number(page) === Math.round(Number(searchBooks?.total) / 10)) {
+    if (Number(page) === totalPage) {
       return;
     }
     navigate(`/search/${title}/${Number(page) + 1}`);
@@ -40,6 +50,7 @@ const Search = () => {
 
   useEffect(() => {
     dispatch(fetchSearchBooks({ title, page }));
+    dispatch(setCurrentPage(Number(page)));
   }, [dispatch, title, page]);
 
   if (status === "loading") {
@@ -57,14 +68,12 @@ const Search = () => {
           return <BookItem key={book.isbn13} book={book} />;
         })}
       </StyledBooks>
-      <div>
-        <button type="button" onClick={handlePrevPage}>
-          Prev Page
-        </button>
-        <button type="button" onClick={handleNextPage}>
-          Next Page
-        </button>
-      </div>
+      <PageControl
+        handlePrevPage={handlePrevPage}
+        handlePage={handlePage}
+        handleNextPage={handleNextPage}
+        totalPage={totalPage}
+      />
     </StyledSearch>
   );
 };

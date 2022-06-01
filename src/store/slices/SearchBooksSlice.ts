@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { bookApi } from "../../services/bookServises";
 import { ISearchBooksApi } from "../../services/types/intex";
-import { INewBooksSlice, ISearchBooksSlice } from "./types";
+import { ISearchBooksSlice } from "./types";
 
 interface IArguments {
   title: string;
@@ -14,6 +14,8 @@ const initialState: ISearchBooksSlice = {
     error: null,
     total: "0",
   },
+  totalPage: 1,
+  currentPage: 1,
   error: null,
   status: "idle",
 };
@@ -28,7 +30,11 @@ export const fetchSearchBooks = createAsyncThunk<ISearchBooksApi, IArguments>(
 const searchBooksSlice = createSlice({
   name: "searchBooks",
   initialState,
-  reducers: {},
+  reducers: {
+    setCurrentPage: (state, action) => {
+      state.currentPage = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchSearchBooks.pending, (state) => {
       state.status = "loading";
@@ -37,6 +43,7 @@ const searchBooksSlice = createSlice({
     builder.addCase(fetchSearchBooks.fulfilled, (state, { payload }) => {
       state.status = "success";
       state.results = payload;
+      state.totalPage = Math.round(Number(payload.total) / 10)
     });
     builder.addCase(fetchSearchBooks.rejected, (state, { payload }) => {
       state.status = "error";
@@ -46,3 +53,5 @@ const searchBooksSlice = createSlice({
 });
 
 export default searchBooksSlice.reducer;
+
+export const { setCurrentPage } = searchBooksSlice.actions;
