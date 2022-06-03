@@ -5,7 +5,7 @@ interface IStarRaiting {
   rating: number;
 }
 
-const StarRaiting = ({ rating }: IStarRaiting) => {
+const StarRating = ({ rating }: IStarRaiting) => {
   return (
     <StarRatings
       rating={rating}
@@ -19,4 +19,4 @@ const StarRaiting = ({ rating }: IStarRaiting) => {
   );
 };
 
-export default StarRaiting;
+export default StarRating;

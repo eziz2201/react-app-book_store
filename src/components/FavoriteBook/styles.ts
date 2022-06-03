@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../../ui/colors";
 import { media } from "../../ui/media";
@@ -15,7 +16,7 @@ const StyledFavoriteBook = styled.div`
   }
 `;
 
-const StyledImage = styled.div`
+const StyledImage = styled(Link)`
   margin-bottom: 49px;
   width: 256px;
   height: 192px;
@@ -94,7 +95,7 @@ const StyledRaiting = styled.div`
 `;
 
 const StyledRemoveButton = styled.button`
-  margin: 88px auto auto auto;
+  margin: 88px 20px auto auto;
   background-color: ${colors.WHITE};
   transition: background 0.5s;
   path {
@@ -114,6 +115,8 @@ const StyledRemoveButton = styled.button`
     position: absolute;
     right: 0;
     top: 0;
+    padding: 16px;
+    margin: 0;
     background-color: ${colors.PRIMARY};
     &:hover {
       background-color: ${colors.PRIMARYSECOND};
