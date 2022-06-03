@@ -14,7 +14,7 @@ interface IBookItem {
 
 const BookItem = ({ book }: IBookItem) => {
   return (
-    <StyledBookItem to={"/books/" + book.isbn13} key={book.isbn13}>
+    <StyledBookItem to={"/books/" + book.isbn13}>
       <StyledImg src={book.image} alt={book.title} />
       <StyledTitle>{book.title === "" ? "No title" : book.title}</StyledTitle>
       <StyledIsbn>{book.isbn13 === "" ? "No isbn" : book.isbn13}</StyledIsbn>

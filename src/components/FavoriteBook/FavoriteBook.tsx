@@ -2,6 +2,7 @@ import { useAppDispatch } from "../../store/hooks/hooks";
 import { removeFavorite } from "../../store/slices/favoriteBooksSlice";
 import { IFavoriteBook } from "../../types/types";
 import IconSelector from "../IconSelector/IconSelector";
+import StarRating from "../StarRating/StarRating";
 import {
   StyledBookInfo,
   StyledFavoriteBook,
@@ -24,7 +25,7 @@ const FavoriteBook = ({ book }: IBook) => {
   };
   return (
     <StyledFavoriteBook>
-      <StyledImage>
+      <StyledImage to={"/books/" + book.isbn13}>
         <img src={book.image} alt={book.image} />
       </StyledImage>
       <StyledBookInfo>
@@ -34,7 +35,9 @@ const FavoriteBook = ({ book }: IBook) => {
         </StyledText>
         <StyledPrice>
           {book.price}
-          <StyledRaiting>*****</StyledRaiting>
+          <StyledRaiting>
+            <StarRating rating={Number(book.rating)} />
+          </StyledRaiting>
         </StyledPrice>
       </StyledBookInfo>
       <StyledRemoveButton onClick={handleRemoveFavorite}>

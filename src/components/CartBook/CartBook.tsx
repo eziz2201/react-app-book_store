@@ -45,7 +45,7 @@ const CartBook = ({ book }: ICartBook) => {
   };
   return (
     <StyledCartBook>
-      <StyledImage>
+      <StyledImage to={"/books/" + book.isbn13}>
         <img src={book.image} alt={book.image} />
       </StyledImage>
       <StyledBookInfo>

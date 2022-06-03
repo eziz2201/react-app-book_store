@@ -14,9 +14,16 @@ export interface IFavoriteBook {
   year: string;
   price: string;
   isbn13: string;
+  rating: string;
 }
 
-export interface ICart extends IFavoriteBook {
+export interface ICart {
+  image: string;
+  title: string;
+  authors: string;
+  year: string;
+  price: string;
+  isbn13: string;
   quantity: number;
   totalPrice: string;
 }

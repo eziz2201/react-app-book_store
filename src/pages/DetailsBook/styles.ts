@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../ui/colors";
+import { media } from "../../ui/media";
 import { typography } from "../../ui/typography";
 
 interface IButton {
@@ -25,18 +26,39 @@ const StyledMainCointainer = styled.div`
   display: flex;
   gap: calc(100% - (544px + 448px));
   margin-bottom: 72px;
+  ${media.TABLET} {
+    display: grid;
+  }
 `;
 
 const StyledBookImage = styled.div`
   position: relative;
-
   height: 472px;
   max-width: 544px;
   width: 100%;
-  background-color: yellow;
+  background-color: ${colors.ORANGE};
   img {
     height: 100%;
     width: 100%;
+  }
+  ${media.TABLET} {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      display: block;
+      max-width: 500px;
+      width: 100%;
+      height: 550px;
+    }
+  }
+  ${media.PHONE} {
+    height: 272px;
+    img {
+      max-width: 300px;
+      height: 350px;
+    }
   }
 `;
 const StyledAddFovorite = styled.div`
@@ -51,6 +73,9 @@ const StyledBookInfo = styled.div`
   width: 100%;
   padding-top: 42px;
   border-top: 1px solid ${colors.GRAY};
+  ${media.TABLET} {
+    max-width: 100%;
+  }
 `;
 
 const StyledPrice = styled.h2`
@@ -60,8 +85,6 @@ const StyledPrice = styled.h2`
   ${typography.H2}
   color: ${colors.PRIMARY};
 `;
-
-const StyledRaiting = styled.div``;
 
 const StyledParams = styled.p`
   display: flex;
@@ -76,18 +99,16 @@ const StyledParams = styled.p`
 const StyledArrowDown = styled.div`
   display: flex;
   align-items: center;
-  grid-gap: 5px;
-  margin-top: 20px;
-  margin-bottom: 60px;
+  gap: 10px;
+  margin-bottom: 55px;
   cursor: pointer;
   ${typography.TAB}
   color: ${colors.PRIMARY};
 `;
 
 const StyledButtonContainer = styled.div`
-  position: absolute;
-  width: 100%;
-  bottom: 0;
+  display: flex;
+  align-items: end;
 `;
 
 const StyledTabList = styled.div`
@@ -117,9 +138,13 @@ const StyledTab = styled.button<IButton>`
 `;
 
 const StyledTabPanel = styled.div`
+  min-height: 128px;
   ${typography.B1}
   color: ${colors.PRIMARY};
   margin-bottom: 48px;
+  ${media.PHONE} {
+    min-height: 193px;
+  }
 `;
 
 const StyledIcons = styled.div`
@@ -160,7 +185,6 @@ export {
   StyledMainCointainer,
   StyledParams,
   StyledPrice,
-  StyledRaiting,
   StyledTab,
   StyledTabList,
   StyledTabPanel,

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../../ui/colors";
 import { media } from "../../ui/media";
@@ -15,7 +16,7 @@ const StyledCartBook = styled.div`
   }
 `;
 
-const StyledImage = styled.div`
+const StyledImage = styled(Link)`
   margin-bottom: 49px;
   width: 256px;
   height: 192px;
@@ -103,6 +104,9 @@ const StyledRemoveCartButton = styled.button`
     position: absolute;
     top: 0;
     right: 0;
+    svg {
+      background-color: ${colors.PRIMARY};
+    }
     path {
       fill: ${colors.WHITE};
       stroke: ${colors.WHITE};
@@ -110,6 +114,9 @@ const StyledRemoveCartButton = styled.button`
       transition: all 0.3s;
     }
     &:hover {
+      background-color: ${colors.PRIMARYSECOND};
+    }
+    &:hover svg {
       background-color: ${colors.PRIMARYSECOND};
     }
     &:hover path {

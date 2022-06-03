@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import FavoritesButton from "../../components/FavoritesButton/FavoritesButton";
 import IconSelector from "../../components/IconSelector/IconSelector";
+import StarRating from "../../components/StarRating/StarRating";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import {
   getDetailsBook,
@@ -25,7 +26,6 @@ import {
   StyledMainCointainer,
   StyledParams,
   StyledPrice,
-  StyledRaiting,
   StyledTab,
   StyledTabList,
   StyledTabPanel,
@@ -67,6 +67,7 @@ const DetailsBook = () => {
         year: detailsBook.year,
         price: detailsBook.price,
         isbn13: detailsBook.isbn13,
+        rating: detailsBook.rating,
       })
     );
   };
@@ -110,13 +111,17 @@ const DetailsBook = () => {
 
         <StyledBookInfo>
           <StyledPrice>
-            {detailsBook.price} <StyledRaiting>{"*****"}</StyledRaiting>
+            {detailsBook.price}
+            <StarRating rating={Number(detailsBook.rating)} />
           </StyledPrice>
           <StyledParams>
             Authors<span>{detailsBook.authors}</span>
           </StyledParams>
           <StyledParams>
-            Publisher<span>{detailsBook.year}</span>
+            Publisher
+            <span>
+              {detailsBook.publisher}, {detailsBook.year}
+            </span>
           </StyledParams>
           <StyledParams>
             Language<span>{detailsBook.language}</span>
