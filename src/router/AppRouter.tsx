@@ -17,7 +17,7 @@ const AppRouter = () => {
     <Routes>
       <Route path={routes.HOME} element={<MainTemplate />}>
         <Route index element={<Home />}></Route>
-        <Route  path={routes.NEW_BOOKS} element={<NewBooks />}></Route>
+        <Route path={routes.NEW_BOOKS} element={<NewBooks />}></Route>
         <Route path={routes.SIGN_IN} element={<SignIn />}></Route>
         <Route path={routes.SIGN_UP} element={<SignUp />}></Route>
         <Route path={routes.SEARCH} element={<Search />}></Route>

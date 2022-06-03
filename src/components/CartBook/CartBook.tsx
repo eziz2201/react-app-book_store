@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useAppDispatch } from "../../store/hooks/hooks";
 import { removeCart, updateQuantity } from "../../store/slices/cartSlice";
-import { ICart } from "../../store/slices/types";
+import { ICart } from "../../types/types";
+import CancelButton from "../CancelButton/CancelButton";
 import IconSelector from "../IconSelector/IconSelector";
 import {
   StyledBookInfo,
@@ -15,11 +16,11 @@ import {
   StyledQuantity,
 } from "./styles";
 
-interface IBook {
+interface ICartBook {
   book: ICart;
 }
 
-const CartBook = ({ book }: IBook) => {
+const CartBook = ({ book }: ICartBook) => {
   const [quantity, setQuantity] = useState(book.quantity);
   const dispatch = useAppDispatch();
   const increaseQuantity = (n = 1) => {
@@ -63,9 +64,9 @@ const CartBook = ({ book }: IBook) => {
           </StyledButton>
         </StyledQuantity>
       </StyledBookInfo>
-      <StyledPrice>{book.price}</StyledPrice>
+      <StyledPrice>${book.totalPrice}</StyledPrice>
       <StyledRemoveCartButton onClick={handleRemoveCart}>
-        <IconSelector id="cancel" />
+        <CancelButton />
       </StyledRemoveCartButton>
     </StyledCartBook>
   );

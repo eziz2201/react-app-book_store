@@ -6,8 +6,8 @@ interface IButton {
   isActive: boolean;
 }
 
-export const StyledDetailsBook = styled.div``;
-export const StyledBackButton = styled.div`
+const StyledDetailsBook = styled.div``;
+const StyledBackButton = styled.div`
   margin-top: 77px;
   cursor: pointer;
   path {
@@ -15,19 +15,19 @@ export const StyledBackButton = styled.div`
   }
 `;
 
-export const StyledTitle = styled.h1`
+const StyledTitle = styled.h1`
   margin-top: 37px;
   margin-bottom: 50px;
   ${typography.H1}
   color: ${colors.PRIMARY};
 `;
-export const StyledMainCointainer = styled.div`
+const StyledMainCointainer = styled.div`
   display: flex;
   gap: calc(100% - (544px + 448px));
   margin-bottom: 72px;
 `;
 
-export const StyledBookImage = styled.div`
+const StyledBookImage = styled.div`
   position: relative;
 
   height: 472px;
@@ -39,13 +39,13 @@ export const StyledBookImage = styled.div`
     width: 100%;
   }
 `;
-export const StyledAddFovorite = styled.div`
+const StyledAddFovorite = styled.div`
   position: absolute;
   right: 0;
   top: 0;
 `;
 
-export const StyledBookInfo = styled.div`
+const StyledBookInfo = styled.div`
   position: relative;
   max-width: 448px;
   width: 100%;
@@ -53,7 +53,7 @@ export const StyledBookInfo = styled.div`
   border-top: 1px solid ${colors.GRAY};
 `;
 
-export const StyledPrice = styled.h2`
+const StyledPrice = styled.h2`
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
@@ -61,9 +61,9 @@ export const StyledPrice = styled.h2`
   color: ${colors.PRIMARY};
 `;
 
-export const StyledRaiting = styled.div``;
+const StyledRaiting = styled.div``;
 
-export const StyledParams = styled.p`
+const StyledParams = styled.p`
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
@@ -73,7 +73,7 @@ export const StyledParams = styled.p`
     color: ${colors.PRIMARY};
   }
 `;
-export const StyledArrowDown = styled.div`
+const StyledArrowDown = styled.div`
   display: flex;
   align-items: center;
   grid-gap: 5px;
@@ -84,20 +84,20 @@ export const StyledArrowDown = styled.div`
   color: ${colors.PRIMARY};
 `;
 
-export const StyledButtonContainer = styled.div`
+const StyledButtonContainer = styled.div`
   position: absolute;
   width: 100%;
   bottom: 0;
 `;
 
-export const StyledTabList = styled.div`
+const StyledTabList = styled.div`
   display: flex;
   gap: 40px;
   border-bottom: 1px solid ${colors.GRAY};
   margin-bottom: 50px;
 `;
 
-export const StyledTab = styled.button<IButton>`
+const StyledTab = styled.button<IButton>`
   padding: 0 40px 24px;
   background-color: ${colors.WHITE};
   ${typography.TAB}
@@ -116,17 +116,17 @@ export const StyledTab = styled.button<IButton>`
       : ""};
 `;
 
-export const StyledTabPanel = styled.div`
+const StyledTabPanel = styled.div`
   ${typography.B1}
   color: ${colors.PRIMARY};
   margin-bottom: 48px;
 `;
 
-export const StyledIcons = styled.div`
+const StyledIcons = styled.div`
   display: flex;
   gap: 10px;
 `;
-export const StyledIconsItem = styled.a`
+const StyledIconsItem = styled.a`
   height: 39px;
   width: 39px;
   border: 1px solid ${colors.GRAY};
@@ -146,3 +146,23 @@ export const StyledIconsItem = styled.a`
     fill: ${colors.RED};
   }
 `;
+
+export {
+  StyledAddFovorite,
+  StyledArrowDown,
+  StyledBackButton,
+  StyledBookImage,
+  StyledBookInfo,
+  StyledButtonContainer,
+  StyledDetailsBook,
+  StyledIcons,
+  StyledIconsItem,
+  StyledMainCointainer,
+  StyledParams,
+  StyledPrice,
+  StyledRaiting,
+  StyledTab,
+  StyledTabList,
+  StyledTabPanel,
+  StyledTitle,
+};

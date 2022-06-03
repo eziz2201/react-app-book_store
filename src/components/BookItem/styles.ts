@@ -3,42 +3,51 @@ import styled from "styled-components";
 import { colors } from "../../ui/colors";
 import { typography } from "../../ui/typography";
 
-export const StyledBookItem = styled(Link)`
+const StyledBookItem = styled(Link)`
   display: grid;
-  grid-template-rows: 330px 13% 6% 15%;
-  position: relative;
+  grid-template-rows: 300px 60px 25px 50px 30px;
+  grid-gap: 5px;
   padding: 1rem;
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   text-decoration: none;
 `;
-export const StyledImg = styled.img`
+const StyledImg = styled.img`
+  height: 100%;
   display: block;
   margin: 0 auto;
 `;
 
-export const StyledTitle = styled.h2`
+const StyledTitle = styled.h2`
+  overflow: hidden;
   ${typography.H3};
   color: ${colors.PRIMARY};
   text-align: center;
 `;
 
-export const StyledIsbn = styled.p`
+const StyledIsbn = styled.p`
+  overflow: hidden;
   ${typography.TAB};
   color: ${colors.SECONDARY};
 `;
 
-export const StyledSubtitle = styled.p`
+const StyledSubtitle = styled.p`
+  overflow: hidden;
   ${typography.S1};
   color: ${colors.PRIMARY};
-  margin-bottom: 30px;
 `;
 
-export const StyledPrice = styled.p`
-  position: absolute;
-  bottom: 0;
-  right: 20px;
+const StyledPrice = styled.p`
   ${typography.H3};
   color: ${colors.PRIMARY};
   text-align: end;
 `;
+
+export {
+  StyledBookItem,
+  StyledImg,
+  StyledIsbn,
+  StyledPrice,
+  StyledSubtitle,
+  StyledTitle,
+};

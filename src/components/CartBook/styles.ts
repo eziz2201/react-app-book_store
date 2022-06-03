@@ -92,16 +92,7 @@ const StyledPrice = styled.h2`
 const StyledRemoveCartButton = styled.button`
   margin: auto 17px auto auto;
   background-color: #fff;
-  path {
-    fill: ${colors.PRIMARY};
-    stroke: ${colors.PRIMARY};
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  &:hover path {
-    fill: ${colors.RED};
-    stroke: ${colors.RED};
-  }
+
   ${media.TABLET} {
     margin: 17px 17px auto auto;
   }

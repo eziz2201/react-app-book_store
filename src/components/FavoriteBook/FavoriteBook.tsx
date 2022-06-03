@@ -1,6 +1,6 @@
 import { useAppDispatch } from "../../store/hooks/hooks";
 import { removeFavorite } from "../../store/slices/favoriteBooksSlice";
-import { IFavoriteBook } from "../../store/slices/types";
+import { IFavoriteBook } from "../../types/types";
 import IconSelector from "../IconSelector/IconSelector";
 import {
   StyledBookInfo,
@@ -10,7 +10,7 @@ import {
   StyledRaiting,
   StyledText,
   StyledTitle,
-  StyledRemoveFavoriteButton,
+  StyledRemoveButton,
 } from "./styles";
 
 interface IBook {
@@ -37,9 +37,9 @@ const FavoriteBook = ({ book }: IBook) => {
           <StyledRaiting>*****</StyledRaiting>
         </StyledPrice>
       </StyledBookInfo>
-      <StyledRemoveFavoriteButton onClick={handleRemoveFavorite}>
+      <StyledRemoveButton onClick={handleRemoveFavorite}>
         <IconSelector id="favorites" />
-      </StyledRemoveFavoriteButton>
+      </StyledRemoveButton>
     </StyledFavoriteBook>
   );
 };

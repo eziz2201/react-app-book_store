@@ -9,16 +9,23 @@ export const StyledButton = styled.button`
   padding: 0;
   background-color: ${colors.WHITE};
   border: none;
-
+  path {
+    fill: ${colors.PRIMARY};
+    stroke: ${colors.PRIMARY};
+    cursor: pointer;
+    transition: all 0.3s;
+  }
   &:hover {
     path {
       fill: ${colors.RED};
+      stroke: ${colors.RED};
     }
   }
 
   &:disabled {
     path {
       fill: ${colors.SECONDARY};
+      stroke: ${colors.SECONDARY};
     }
   }
 `;

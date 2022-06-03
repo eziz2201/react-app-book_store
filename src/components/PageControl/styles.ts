@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { colors } from "../../ui/colors";
 import { typography } from "../../ui/typography";
 
-interface Active{
-    isActive: boolean;
+interface Active {
+  isActive: boolean;
 }
 
 const StyledPageControl = styled.div`
@@ -17,9 +17,9 @@ const StyledNavigationButton = styled.button`
   background-color: ${colors.WHITE};
   ${typography.B2};
   color: ${colors.SECONDARY};
-  transition: color .5s;
+  transition: color 0.5s;
   path {
-    transition: fill .5s;
+    transition: fill 0.5s;
     fill: ${colors.SECONDARY};
   }
   &:hover {
@@ -41,8 +41,9 @@ const StyledNumberButton = styled.button<Active>`
   align-items: center;
   background-color: ${colors.WHITE};
   ${typography.B2};
-  color: ${({ isActive }) => (isActive ? `${colors.PRIMARY}` : `${colors.SECONDARY}`)};;
-  transition: color .3s;
+  color: ${({ isActive }) =>
+    isActive ? `${colors.PRIMARY}` : `${colors.SECONDARY}`};
+  transition: color 0.3s;
   &:hover {
     color: ${colors.PRIMARY};
   }

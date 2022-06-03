@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IFavoriteBook, IFavoriteBooksSlice } from "./types";
+import { IFavoriteBook } from "../../types/types";
+import { IFavoriteBooksSlice } from "./types";
 
 const initialState: IFavoriteBooksSlice = {
   results: [],

@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import FavoritesButton from "../../components/FavoritesButton/FavoritesButton";
 import IconSelector from "../../components/IconSelector/IconSelector";
-import { IBookDetailsApi } from "../../services/types/intex";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import {
   getDetailsBook,
@@ -12,7 +11,7 @@ import {
 import { addCart } from "../../store/slices/cartSlice";
 import { fetchBookDetails } from "../../store/slices/detailsBooksSlice";
 import { addFavorite } from "../../store/slices/favoriteBooksSlice";
-import { IFavoriteBook } from "../../store/slices/types";
+import { IBookDetails, IFavoriteBook } from "../../types/types";
 import {
   StyledAddFovorite,
   StyledArrowDown,
@@ -71,7 +70,7 @@ const DetailsBook = () => {
       })
     );
   };
-  const handleCart = (detailsBook: IBookDetailsApi) => {
+  const handleCart = (detailsBook: IBookDetails) => {
     dispatch(
       addCart({
         image: detailsBook.image,

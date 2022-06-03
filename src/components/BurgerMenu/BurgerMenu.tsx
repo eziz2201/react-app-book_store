@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
+import CancelButton from "../CancelButton/CancelButton";
 import IconSelector from "../IconSelector/IconSelector";
 import { StyledInput } from "../NavBar/styles";
 import {
@@ -33,7 +34,7 @@ const BurgerMenu = ({ handleBurgerClose, isOpen }: IBurgerMenu) => {
         <StyledBurgerMenuNav>
           <StyledBurgerCloseContainer>
             <StyledBurgerClose onClick={handleBurgerClose}>
-              <IconSelector id="cancel" />
+              <CancelButton />
             </StyledBurgerClose>
           </StyledBurgerCloseContainer>
           <StyledBurgerSearch>

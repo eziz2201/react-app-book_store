@@ -17,7 +17,7 @@ import { setUser } from "../../store/slices/userSlice";
 import { useState } from "react";
 import { useAppDispatch } from "../../store/hooks/hooks";
 
-interface ISign {
+interface ISignUp {
   name: string;
   email: string;
   password: string;
@@ -29,8 +29,8 @@ const SignUp = () => {
   const dispatch = useAppDispatch();
   const [errorEmail, setErrorEmail] = useState<string>("");
   const [isConfirmCorrect, setIsConfirmCorrect] = useState<boolean>(true);
-  const { register, handleSubmit } = useForm<ISign>();
-  const onSubmit = (data: ISign) => {
+  const { register, handleSubmit } = useForm<ISignUp>();
+  const onSubmit = (data: ISignUp) => {
     if (data.password === data.confirmPassword) {
       const auth = getAuth();
       createUserWithEmailAndPassword(auth, data.email, data.password)
@@ -48,7 +48,9 @@ const SignUp = () => {
   return (
     <StyledSign>
       <StyledTabs>
-        <StyledTab onClick={() => navigate(`/${routes.SIGN_IN}`)}>SIGN IN</StyledTab>
+        <StyledTab onClick={() => navigate(`/${routes.SIGN_IN}`)}>
+          SIGN IN
+        </StyledTab>
         <StyledTab>SIGN UP</StyledTab>
       </StyledTabs>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>

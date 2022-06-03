@@ -1,8 +1,10 @@
+import { INewBooksApi } from "../../../services/types/intex";
 import {
-  IBookDetailsApi,
-  INewBookApi,
-  INewBooksApi,
-} from "../../../services/types/intex";
+  IBook,
+  IBookDetails,
+  ICart,
+  IFavoriteBook,
+} from "../../../types/types";
 
 export interface IUserStrore {
   isAuth: boolean;
@@ -19,36 +21,22 @@ export interface ISearchBooksSlice {
   results: {
     error: string | null;
     total: string;
-    books: INewBookApi[];
+    books: IBook[];
   };
-  totalPage: number,
-  currentPage: number,
+  totalPage: number;
+  currentPage: number;
   error: any;
   status: RequestStatusType;
 }
 
 export interface IDetailsBookSlice {
-  results: IBookDetailsApi;
+  result: IBookDetails;
   error: any;
   status: RequestStatusType;
 }
 
-export interface IFavoriteBook {
-  image: string;
-  title: string;
-  authors: string;
-  year: string;
-  price: string;
-  isbn13: string;
-}
-
 export interface IFavoriteBooksSlice {
   results: IFavoriteBook[];
-}
-
-export interface ICart extends IFavoriteBook {
-  quantity: number;
-  totalPrice: string;
 }
 
 export interface ICartSlice {
