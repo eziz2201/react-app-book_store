@@ -43,6 +43,12 @@ const cartSlice = createSlice({
       state.vat = parseFloat(((state.total / 100) * 10).toFixed(2));
       state.sumTotal = parseFloat((state.total - state.vat).toFixed(2));
     },
+    removeAllCart: (state) => {
+      state.results = [];
+      state.total = 0;
+      state.vat = 0;
+      state.sumTotal = 0;
+    },
     updateQuantity: (state, { payload }: PayloadAction<IQuantity>) => {
       const { isbn13, value } = payload;
       state.results.forEach((item) => {
@@ -66,4 +72,5 @@ const cartSlice = createSlice({
 
 export default cartSlice.reducer;
 
-export const { addCart, removeCart, updateQuantity } = cartSlice.actions;
+export const { addCart, removeCart, removeAllCart, updateQuantity } =
+  cartSlice.actions;

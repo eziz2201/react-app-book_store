@@ -3,13 +3,14 @@ import Button from "../../components/Button/Button";
 import CartBook from "../../components/CartBook/CartBook";
 
 import IconSelector from "../../components/IconSelector/IconSelector";
-import { useAppSelector } from "../../store/hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import {
   getCarts,
   getSumTotalCarts,
   getTotalCarts,
   getVatCarts,
 } from "../../store/selectors/cartSelectors";
+import { removeAllCart } from "../../store/slices/cartSlice";
 
 import {
   StyledBackButton,
@@ -28,9 +29,13 @@ const Cart = () => {
   const vat = useAppSelector(getVatCarts);
   const total = useAppSelector(getTotalCarts);
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const handleBack = () => {
     navigate(-1);
+  };
+  const handleCheckOut = () => {
+    dispatch(removeAllCart());
   };
   return (
     <StyledCart>
@@ -53,7 +58,7 @@ const Cart = () => {
         <StyledCheckTotal>
           Total:<span>${total}</span>
         </StyledCheckTotal>
-        <StyledCheckButton>
+        <StyledCheckButton onClick={handleCheckOut}>
           <Button text="check out" />
         </StyledCheckButton>
       </StyledCheckList>
