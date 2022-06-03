@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import FavoritesButton from "../../components/FavoritesButton/FavoritesButton";
 import IconSelector from "../../components/IconSelector/IconSelector";
+import StarRaiting from "../../components/StarRaiting/StarRaiting";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import {
   getDetailsBook,
@@ -67,6 +68,7 @@ const DetailsBook = () => {
         year: detailsBook.year,
         price: detailsBook.price,
         isbn13: detailsBook.isbn13,
+        rating: detailsBook.rating,
       })
     );
   };
@@ -110,7 +112,10 @@ const DetailsBook = () => {
 
         <StyledBookInfo>
           <StyledPrice>
-            {detailsBook.price} <StyledRaiting>{"*****"}</StyledRaiting>
+            {detailsBook.price}{" "}
+            <StyledRaiting>
+              <StarRaiting rating={Number(detailsBook.rating)} />
+            </StyledRaiting>
           </StyledPrice>
           <StyledParams>
             Authors<span>{detailsBook.authors}</span>

@@ -2,6 +2,7 @@ import { useAppDispatch } from "../../store/hooks/hooks";
 import { removeFavorite } from "../../store/slices/favoriteBooksSlice";
 import { IFavoriteBook } from "../../types/types";
 import IconSelector from "../IconSelector/IconSelector";
+import StarRaiting from "../StarRaiting/StarRaiting";
 import {
   StyledBookInfo,
   StyledFavoriteBook,
@@ -34,7 +35,9 @@ const FavoriteBook = ({ book }: IBook) => {
         </StyledText>
         <StyledPrice>
           {book.price}
-          <StyledRaiting>*****</StyledRaiting>
+          <StyledRaiting>
+            <StarRaiting rating={Number(book.rating)} />
+          </StyledRaiting>
         </StyledPrice>
       </StyledBookInfo>
       <StyledRemoveButton onClick={handleRemoveFavorite}>
