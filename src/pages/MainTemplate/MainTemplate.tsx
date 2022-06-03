@@ -1,16 +1,16 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
-import { Container, StyledMainTemplate } from "./styles";
+import { StyledContainer, StyledMainTemplate } from "./styles";
 
 const MainTemplate = () => {
   return (
     <StyledMainTemplate>
-      <Container>
+      <StyledContainer>
         <NavBar />
         <Outlet />
         <Footer />
-      </Container>
+      </StyledContainer>
     </StyledMainTemplate>
   );
 };

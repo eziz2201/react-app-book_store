@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ICart, ICartSlice } from "./types";
+import { ICart } from "../../types/types";
+import { ICartSlice } from "./types";
 
 interface IQuantity {
   isbn13: string;

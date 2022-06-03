@@ -50,9 +50,6 @@ const StyledBurgerClose = styled.div`
   display: flex;
   justify-content: end;
   align-items: center;
-  svg {
-    cursor: pointer;
-  }
 `;
 
 const StyledBurgerSearch = styled.div`

@@ -1,4 +1,4 @@
-import { INewBookApi } from "../../services/types/intex";
+import { IBook } from "../../types/types";
 import {
   StyledBookItem,
   StyledImg,
@@ -8,11 +8,11 @@ import {
   StyledTitle,
 } from "./styles";
 
-interface IBook {
-  book: INewBookApi
+interface IBookItem {
+  book: IBook;
 }
 
-const BookItem = ({ book }: IBook) => {
+const BookItem = ({ book }: IBookItem) => {
   return (
     <StyledBookItem to={"/books/" + book.isbn13} key={book.isbn13}>
       <StyledImg src={book.image} alt={book.title} />

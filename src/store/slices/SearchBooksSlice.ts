@@ -43,7 +43,7 @@ const searchBooksSlice = createSlice({
     builder.addCase(fetchSearchBooks.fulfilled, (state, { payload }) => {
       state.status = "success";
       state.results = payload;
-      state.totalPage = Math.round(Number(payload.total) / 10)
+      state.totalPage = Math.round(Number(payload.total) / 10);
     });
     builder.addCase(fetchSearchBooks.rejected, (state, { payload }) => {
       state.status = "error";

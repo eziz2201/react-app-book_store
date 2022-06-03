@@ -3,7 +3,7 @@ import FavoriteBook from "../../components/FavoriteBook/FavoriteBook";
 import IconSelector from "../../components/IconSelector/IconSelector";
 import { useAppSelector } from "../../store/hooks/hooks";
 import { getFavoriteBooks } from "../../store/selectors/favoriteBooksSelectors";
-import { IFavoriteBook } from "../../store/slices/types";
+import { IFavoriteBook } from "../../types/types";
 import {
   StyledBackButton,
   StyledFavorites,

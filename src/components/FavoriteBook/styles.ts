@@ -93,9 +93,8 @@ const StyledRaiting = styled.div`
   }
 `;
 
-const StyledRemoveFavoriteButton = styled.button`
-  margin: 68px auto auto auto;
-  padding: 20px;
+const StyledRemoveButton = styled.button`
+  margin: 88px auto auto auto;
   background-color: ${colors.WHITE};
   transition: background 0.5s;
   path {
@@ -130,5 +129,5 @@ export {
   StyledRaiting,
   StyledText,
   StyledTitle,
-  StyledRemoveFavoriteButton,
+  StyledRemoveButton,
 };

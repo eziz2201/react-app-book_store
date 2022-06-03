@@ -17,10 +17,10 @@ import {
 } from "./styles";
 import { getFavoriteBooks } from "../../store/selectors/favoriteBooksSelectors";
 import { useAppSelector } from "../../store/hooks/hooks";
-import { ICart, IFavoriteBook } from "../../store/slices/types";
 import { getCarts } from "../../store/selectors/cartSelectors";
 import { useState } from "react";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
+import { ICart, IFavoriteBook } from "../../types/types";
 interface IData {
   title: string;
 }

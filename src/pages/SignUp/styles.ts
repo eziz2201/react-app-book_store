@@ -3,7 +3,7 @@ import { colors } from "../../ui/colors";
 import { media } from "../../ui/media";
 import { typography } from "../../ui/typography";
 
-export const StyledSign = styled.div`
+const StyledSign = styled.div`
   max-width: 544px;
   width: 100%;
   margin: 0 auto;
@@ -20,7 +20,7 @@ export const StyledSign = styled.div`
   }
 `;
 
-export const StyledTabs = styled.div`
+const StyledTabs = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-bottom: 1px solid ${colors.GRAY};
@@ -30,7 +30,7 @@ export const StyledTabs = styled.div`
   }
 `;
 
-export const StyledTab = styled.div`
+const StyledTab = styled.div`
   padding: 26px 0;
   text-align: center;
   color: ${colors.SECONDARY};
@@ -45,7 +45,7 @@ export const StyledTab = styled.div`
   }
 `;
 
-export const StyledForm = styled.form`
+const StyledForm = styled.form`
   padding: 32px;
   padding-bottom: 40px;
   ${media.PHONE} {
@@ -53,14 +53,14 @@ export const StyledForm = styled.form`
   }
 `;
 
-export const StyledContainer = styled.div`
+const StyledContainer = styled.div`
   margin-bottom: 16px;
   &:last-of-type {
     margin-bottom: 40px;
   }
 `;
 
-export const StyledInput = styled.input`
+const StyledInput = styled.input`
   width: 100%;
   height: 56px;
   padding: 0 20px;
@@ -80,16 +80,27 @@ export const StyledInput = styled.input`
     background-color: ${colors.GRAY};
   }
 `;
-export const StyledLabel = styled.label`
+const StyledLabel = styled.label`
   margin-bottom: 4px;
   ${typography.B1};
   font-weight: 700;
   color: ${colors.PRIMARY};
 `;
 
-export const StyledErrorLabel = styled.label`
+const StyledErrorLabel = styled.label`
   margin-top: 4px;
   ${typography.B1};
   font-weight: 700;
   color: ${colors.RED};
 `;
+
+export {
+  StyledContainer,
+  StyledErrorLabel,
+  StyledForm,
+  StyledInput,
+  StyledLabel,
+  StyledSign,
+  StyledTab,
+  StyledTabs,
+};

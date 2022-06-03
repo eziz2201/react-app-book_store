@@ -4,7 +4,7 @@ import { IBookDetailsApi } from "../../services/types/intex";
 import { IDetailsBookSlice } from "./types";
 
 const initialState: IDetailsBookSlice = {
-  results: {
+  result: {
     authors: "",
     desc: "",
     error: "",
@@ -44,7 +44,7 @@ const detailsBookSlice = createSlice({
     });
     builder.addCase(fetchBookDetails.fulfilled, (state, { payload }) => {
       state.status = "success";
-      state.results = payload;
+      state.result = payload;
     });
     builder.addCase(fetchBookDetails.rejected, (state, { payload }) => {
       state.status = "error";

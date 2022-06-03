@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const StyledAccount = styled.div`
+const StyledAccount = styled.div``;
 
-`
+export { StyledAccount };
