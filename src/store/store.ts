@@ -16,6 +16,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import recommendedBooksSlice from "./slices/recommendedBooksSlice";
 
 const rootReducer = combineReducers({
   cartRoot: cartSlice,
@@ -37,6 +38,7 @@ const store = configureStore({
     detailsBook: detailsBooksSlice,
     favoriteBook: persistedReducer,
     cart: persistedReducer,
+    recommendedBooks: recommendedBooksSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
