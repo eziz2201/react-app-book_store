@@ -5,7 +5,7 @@ import { typography } from "../../ui/typography";
 
 const StyledBookItem = styled(Link)`
   display: grid;
-  grid-template-rows: 300px 60px 25px 50px 30px;
+  grid-template-rows: 250px 60px 25px 50px 30px;
   grid-gap: 5px;
   padding: 1rem;
   border-radius: 10px;
