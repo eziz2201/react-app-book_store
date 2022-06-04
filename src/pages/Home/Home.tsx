@@ -4,6 +4,7 @@ import { useAppSelector } from "../../store/hooks/hooks";
 import { getRecommendedBooks } from "../../store/selectors/recommendedBooksSelector";
 
 import { StyledHome, StyledTitle } from "./styles";
+import Subscribe from "../../components/Subscribe/Subscribe";
 
 const Home = () => {
   const recommendedBooks = useAppSelector(getRecommendedBooks);
@@ -11,7 +12,8 @@ const Home = () => {
     <StyledHome>
       <StyledTitle>Recommended Books</StyledTitle>
       <BooksSlider books={recommendedBooks} />
-      <NewBooks></NewBooks>
+      <NewBooks />
+      <Subscribe />
     </StyledHome>
   );
 };

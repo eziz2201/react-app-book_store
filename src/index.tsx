@@ -6,6 +6,7 @@ import GlobalStyles from "./GlobalStyles";
 import store, { persistor } from "./store/store";
 import "./firebase";
 import { PersistGate } from "redux-persist/integration/react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const app = document.querySelector("#root");
 

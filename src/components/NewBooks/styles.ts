@@ -15,7 +15,6 @@ const StyledBooks = styled.ul`
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 20px;
   padding: 0;
-  margin-bottom: 100px;
 `;
 
 export { StyledBooks, StyledNewBooks, StyledTitle };
