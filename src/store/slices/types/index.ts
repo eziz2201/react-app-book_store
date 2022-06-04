@@ -46,4 +46,8 @@ export interface ICartSlice {
   total: number;
 }
 
+export interface IRecommendedBooksSlice {
+  recommendedBooks: IBook[];
+}
+
 export type RequestStatusType = "idle" | "loading" | "success" | "error";

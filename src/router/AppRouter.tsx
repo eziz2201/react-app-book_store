@@ -10,14 +10,12 @@ import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
 import { routes } from "../routes/routes";
 import DetailsBook from "../pages/DetailsBook/DetailsBook";
-import NewBooks from "../pages/NewBooks/NewBooks";
 
 const AppRouter = () => {
   return (
     <Routes>
       <Route path={routes.HOME} element={<MainTemplate />}>
         <Route index element={<Home />}></Route>
-        <Route path={routes.NEW_BOOKS} element={<NewBooks />}></Route>
         <Route path={routes.SIGN_IN} element={<SignIn />}></Route>
         <Route path={routes.SIGN_UP} element={<SignUp />}></Route>
         <Route path={routes.SEARCH} element={<Search />}></Route>
