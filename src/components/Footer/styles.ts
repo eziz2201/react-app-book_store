@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../ui/colors";
+import { media } from "../../ui/media";
 import { typography } from "../../ui/typography";
 
 const StyledFooter = styled.footer`
@@ -7,6 +8,10 @@ const StyledFooter = styled.footer`
   grid-template-columns: repeat(2, 1fr);
   padding: 36px 0;
   border-top: 1px solid ${colors.GRAY};
+  ${media.PHONE} {
+    display: block;
+    text-align: center;
+  }
 `;
 
 const StyledText = styled.p`
@@ -14,6 +19,9 @@ const StyledText = styled.p`
   color: ${colors.SECONDARY};
   &:last-child {
     justify-self: end;
+  }
+  ${media.PHONE} {
+    margin-bottom: 10px;
   }
 `;
 

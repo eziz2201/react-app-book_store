@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import FavoritesButton from "../../components/FavoritesButton/FavoritesButton";
 import IconSelector from "../../components/IconSelector/IconSelector";
+import Loading from "../../components/Loading/Loading";
 import StarRating from "../../components/StarRating/StarRating";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import {
@@ -87,7 +88,7 @@ const DetailsBook = () => {
   };
 
   if (status === "loading") {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
   if (status === "error") {
     return <div>Error: </div>;

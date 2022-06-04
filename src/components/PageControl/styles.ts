@@ -9,6 +9,7 @@ interface Active {
 const StyledPageControl = styled.div`
   display: grid;
   grid-template-columns: 60px 1fr 60px;
+  margin-bottom: 30px;
 `;
 const StyledNavigationButton = styled.button`
   display: flex;

@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import BookItem from "../../components/BookItem/BookItem";
+import Loading from "../../components/Loading/Loading";
 import PageControl from "../../components/PageControl/PageControl";
+import Subscribe from "../../components/Subscribe/Subscribe";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import {
   getSearchBooks,
@@ -54,7 +56,7 @@ const Search = () => {
   }, [dispatch, title, page]);
 
   if (status === "loading") {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
   if (status === "error") {
     return <div>Error: </div>;
@@ -74,6 +76,7 @@ const Search = () => {
         handleNextPage={handleNextPage}
         totalPage={totalPage}
       />
+      <Subscribe />
     </StyledSearch>
   );
 };

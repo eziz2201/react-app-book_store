@@ -14,9 +14,11 @@ interface IData {
 }
 
 const Subscribe = () => {
-  const { register, handleSubmit } = useForm<IData>();
+  const { register, handleSubmit, reset } = useForm<IData>();
 
-  const onSubmit = (data: IData) => {};
+  const onSubmit = (data: IData) => {
+    reset();
+  };
   return (
     <StyledSubscribe>
       <StyledTitle>Subscribe to Newsletter</StyledTitle>

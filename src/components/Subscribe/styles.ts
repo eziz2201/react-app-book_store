@@ -1,10 +1,15 @@
 import styled from "styled-components";
 import { colors } from "../../ui/colors";
+import { media } from "../../ui/media";
 import { typography } from "../../ui/typography";
 
 const StyledSubscribe = styled.div`
   background-color: ${colors.PURPLE};
   padding: 56px 64px;
+  ${media.PHONE} {
+    padding: 40px 20px;
+    height: max-content;
+  }
 `;
 
 const StyledTitle = styled.h2`
@@ -25,6 +30,11 @@ const StyledForm = styled.form`
   height: 56px;
   width: 100%;
   justify-self: center;
+  ${media.PHONE} {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
 `;
 
 const StyledInput = styled.input`

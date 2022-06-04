@@ -19,9 +19,11 @@ const BookItem = ({ book }: IBookItem) => {
       <StyledTitle>{book.title === "" ? "No title" : book.title}</StyledTitle>
       <StyledIsbn>{book.isbn13 === "" ? "No isbn" : book.isbn13}</StyledIsbn>
       <StyledSubtitle>
-        {book.subtitle === "" ? "No subtitle" : book.subtitle}
+        {book.subtitle === "" ? "" : book.subtitle}
       </StyledSubtitle>
-      <StyledPrice>{book.price === "" ? "For free" : book.price}</StyledPrice>
+      <StyledPrice>
+        {book.price === "$0.00" ? "For free" : book.price}
+      </StyledPrice>
     </StyledBookItem>
   );
 };

@@ -6,6 +6,7 @@ import {
   getNewBooksStatus,
 } from "../../store/selectors/newBooksSelectors";
 import { fetchNewBooks } from "../../store/slices/newBooksSlice";
+import Loading from "../Loading/Loading";
 import { StyledBooks, StyledNewBooks, StyledTitle } from "./styles";
 
 const NewBooks = () => {
@@ -19,7 +20,7 @@ const NewBooks = () => {
   }, [dispatch]);
 
   if (status === "loading") {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
   if (status === "error") {
     return <div>Error: </div>;
