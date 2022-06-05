@@ -3,8 +3,7 @@ import { colors } from "../../ui/colors";
 import { typography } from "../../ui/typography";
 
 const StyledFavorites = styled.div`
-  min-height: 60vh;
-  height: 100%;
+  padding-bottom: 50px;
 `;
 const StyledBackButton = styled.div`
   margin-top: 77px;
@@ -23,8 +22,21 @@ const StyledTitle = styled.h1`
 
 const StyledText = styled.p`
   text-align: center;
+  margin-bottom: 50px;
   ${typography.H3}
   color: ${colors.PRIMARY};
 `;
 
-export { StyledBackButton, StyledFavorites, StyledText, StyledTitle };
+const StyledSliderTitle = styled.h2`
+  ${typography.H2};
+  color: ${colors.PRIMARY};
+  margin-bottom: 30px;
+`;
+
+export {
+  StyledBackButton,
+  StyledFavorites,
+  StyledText,
+  StyledTitle,
+  StyledSliderTitle,
+};
