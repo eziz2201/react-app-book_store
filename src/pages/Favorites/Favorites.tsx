@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import FavoriteBook from "../../components/FavoriteBook/FavoriteBook";
 import IconSelector from "../../components/IconSelector/IconSelector";
+import Subscribe from "../../components/Subscribe/Subscribe";
 import { useAppSelector } from "../../store/hooks/hooks";
 import { getFavoriteBooks } from "../../store/selectors/favoriteBooksSelectors";
 import { IFavoriteBook } from "../../types/types";
@@ -31,6 +32,7 @@ const Favorites = () => {
           <FavoriteBook key={book.isbn13} book={book} />
         ))
       )}
+      <Subscribe />
     </StyledFavorites>
   );
 };

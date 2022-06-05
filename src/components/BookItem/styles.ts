@@ -11,6 +11,11 @@ const StyledBookItem = styled(Link)`
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   text-decoration: none;
+  transition: all .3s;
+  &:hover{
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
 `;
 const StyledImg = styled.img`
   height: 100%;

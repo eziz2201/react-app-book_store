@@ -23,6 +23,7 @@ const StyledTitle = styled.h1`
 
 const StyledText = styled.p`
   text-align: center;
+  margin-bottom: 20px;
   ${typography.H3}
   color: ${colors.PRIMARY};
 `;
