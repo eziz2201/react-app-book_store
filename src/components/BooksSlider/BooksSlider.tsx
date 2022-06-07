@@ -37,8 +37,8 @@ const BooksSlider = ({ books }: IBooksSlider) => {
   return (
     <StyledSlider {...settings}>
       {books.map((book) => (
-        <StyledBook>
-          <BookItem key={book.isbn13} book={book} />
+        <StyledBook key={book.isbn13}>
+          <BookItem book={book} />
         </StyledBook>
       ))}
     </StyledSlider>

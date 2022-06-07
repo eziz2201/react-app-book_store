@@ -53,7 +53,7 @@ const CartBook = ({ book }: ICartBook) => {
         <StyledText>
           by {book.authors}, {book.year}
         </StyledText>
-        <StyledText>{book.isbn13}</StyledText>
+        <StyledText>isbn № {book.isbn13}</StyledText>
         <StyledQuantity>
           <StyledButton onClick={handleMinus}>
             <IconSelector id="minus" />

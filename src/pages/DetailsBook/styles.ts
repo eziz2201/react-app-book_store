@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../../ui/colors";
 import { media } from "../../ui/media";
@@ -96,14 +97,31 @@ const StyledParams = styled.p`
     color: ${colors.PRIMARY};
   }
 `;
-const StyledArrowDown = styled.div`
+const StyledArrowDown = styled(Link)`
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 55px;
   cursor: pointer;
+  text-decoration: none;
   ${typography.TAB}
   color: ${colors.PRIMARY};
+  transition: color 0.3s;
+  path {
+    transition: all 0.3s;
+  }
+  &:hover {
+    color: ${colors.SECONDARY};
+  }
+  &:hover path {
+    fill: ${colors.SECONDARY};
+  }
+  &:active {
+    color: ${colors.PRIMARY};
+  }
+  &:active path {
+    fill: ${colors.PRIMARY};
+  }
 `;
 
 const StyledButtonContainer = styled.div`
@@ -120,15 +138,16 @@ const StyledTabList = styled.div`
 
 const StyledTab = styled.button<IButton>`
   padding: 0 40px 24px;
+  border-bottom: 2px solid ${colors.WHITE};
   background-color: ${colors.WHITE};
   ${typography.TAB}
   color: ${colors.SECONDARY};
   cursor: pointer;
+  transition: all 0.5s;
   &:hover {
     color: ${colors.PRIMARYSECOND};
     border-bottom: 2px solid ${colors.PRIMARYSECOND};
   }
-
   border-bottom: ${({ isActive }) =>
     isActive
       ? `2px solid ${colors.PRIMARY};

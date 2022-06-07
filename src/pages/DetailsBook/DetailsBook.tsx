@@ -35,12 +35,11 @@ import {
 
 const DetailsBook = () => {
   const { id = "" } = useParams();
-
   const detailsBook = useAppSelector(getDetailsBook);
   const status = useAppSelector(getDetailsBookStatus);
   const navigate = useNavigate();
   const [active, setActive] = useState<string>("description");
-
+  const [addButtonText, setAddButtonText] = useState<string>("ADD TO CART");
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -85,6 +84,14 @@ const DetailsBook = () => {
         totalPrice: detailsBook.price.slice(1),
       })
     );
+    setAddButtonText("ADDED TO CART");
+    setTimeout(() => {
+      setAddButtonText("ADD TO CART");
+    }, 5000);
+  };
+
+  const handleArrowDown = () => {
+    document.getElementById("tab")?.scrollIntoView({ behavior: "smooth" });
   };
 
   if (status === "loading") {
@@ -130,15 +137,15 @@ const DetailsBook = () => {
           <StyledParams>
             Format<span>{"Paper book / ebook (PDF)"}</span>
           </StyledParams>
-          <StyledArrowDown>
+          <StyledArrowDown to="#tab" onClick={handleArrowDown}>
             More details <IconSelector id="arrow-down"></IconSelector>
           </StyledArrowDown>
           <StyledButtonContainer onClick={() => handleCart(detailsBook)}>
-            <Button text="ADD TO CART"></Button>
+            <Button text={addButtonText}></Button>
           </StyledButtonContainer>
         </StyledBookInfo>
       </StyledMainCointainer>
-      <StyledTabList>
+      <StyledTabList id="tab">
         <StyledTab
           isActive={active === "description"}
           onClick={handleDescription}

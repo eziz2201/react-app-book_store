@@ -15,6 +15,9 @@ const StyledNavbar = styled.nav`
   }
 `;
 const StyledLogo = styled(NavLink)``;
+const StyledSearchButton = styled.button`
+  background-color: ${colors.WHITE};
+`;
 const StyledSearch = styled.div`
   position: relative;
   max-width: 542px;
@@ -25,6 +28,17 @@ const StyledSearch = styled.div`
     position: absolute;
     top: 18px;
     right: 18px;
+    cursor: pointer;
+    path:first-of-type {
+      transition: all 0.3s;
+      fill: ${colors.SECONDARY};
+    }
+    :hover path:first-of-type {
+      fill: ${colors.RED};
+    }
+    :active path:first-of-type {
+      fill: ${colors.PRIMARY};
+    }
   }
   ${media.TABLET} {
     display: none;
@@ -118,4 +132,5 @@ export {
   StyledLogo,
   StyledNavbar,
   StyledSearch,
+  StyledSearchButton,
 };

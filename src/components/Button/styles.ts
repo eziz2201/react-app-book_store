@@ -10,7 +10,7 @@ export const StyledButton = styled.button`
   ${typography.BUTTON};
   color: ${colors.WHITE};
   text-align: center;
-
+  transition: background 0.5s;
   &:hover {
     background-color: ${colors.PRIMARYSECOND};
   }

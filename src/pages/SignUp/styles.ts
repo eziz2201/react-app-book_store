@@ -36,6 +36,7 @@ const StyledTab = styled.div`
   color: ${colors.SECONDARY};
   ${typography.BUTTON}
   cursor: pointer;
+  transition: all 0.3s;
   &:last-child {
     border-bottom: 2px solid ${colors.PRIMARY};
     color: ${colors.PRIMARY};
@@ -94,6 +95,14 @@ const StyledErrorLabel = styled.label`
   color: ${colors.RED};
 `;
 
+const StyledError = styled.div`
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: ${colors.RED};
+  ${typography.B2};
+  text-align: center;
+`;
+
 export {
   StyledContainer,
   StyledErrorLabel,
@@ -103,4 +112,5 @@ export {
   StyledSign,
   StyledTab,
   StyledTabs,
+  StyledError,
 };
