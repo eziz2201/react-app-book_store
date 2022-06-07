@@ -5,6 +5,7 @@ import { routes } from "../../routes/routes";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {
   StyledContainer,
+  StyledError,
   StyledErrorLabel,
   StyledForm,
   StyledInput,
@@ -25,9 +26,14 @@ interface ISignIn {
 const SignIn = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const [errorPassword, setErrorPassword] = useState<string>("");
-  const [errorEmail, setErrorEmail] = useState<string>("");
-  const { register, handleSubmit } = useForm<ISignIn>();
+  const [error, setError] = useState<string>("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ISignIn>({
+    mode: "onChange",
+  });
   const onSubmit = (data: ISignIn) => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, data.email, data.password)
@@ -37,11 +43,12 @@ const SignIn = () => {
       })
       .catch((error) => {
         const errorCode = error.code;
+
+        if (errorCode === "auth/wrong-password") {
+          setError("The password you entered is incorrect! Please try again.");
+        }
         if (errorCode === "auth/user-not-found") {
-          setErrorEmail("Sorry, that email address is incorrect!");
-        } else {
-          setErrorPassword("Sorry, that password is incorrect!");
-          setErrorEmail("");
+          setError("The email you entered is incorrect! Please try again.");
         }
       });
   };
@@ -54,36 +61,44 @@ const SignIn = () => {
         </StyledTab>
       </StyledTabs>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
+        {error && <StyledError>{error}</StyledError>}
         <StyledContainer>
           <StyledLabel htmlFor="email">Email</StyledLabel>
           <StyledInput
-            {...register("email")}
+            {...register("email", {
+              required: "Email is require field!",
+              pattern: {
+                value: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                message: "Please enter valid email!",
+              },
+            })}
             placeholder="Your email"
             id="email"
-            type="email"
           />
-          {errorEmail !== "" ? (
-            <StyledErrorLabel htmlFor="email">{errorEmail}</StyledErrorLabel>
-          ) : (
-            <></>
+          {errors?.email && (
+            <StyledErrorLabel>
+              {errors?.email?.message || "Error"}
+            </StyledErrorLabel>
           )}
         </StyledContainer>
         <StyledContainer>
           <StyledLabel htmlFor="password">Password</StyledLabel>
           <StyledInput
             {...register("password", {
-              minLength: 6,
+              required: "Password is require field!",
+              minLength: {
+                value: 6,
+                message: "Minimum 8 characters!",
+              },
             })}
             placeholder="Your password"
             id="password"
             type="password"
           />
-          {errorPassword !== "" ? (
-            <StyledErrorLabel htmlFor="password">
-              {errorPassword}
+          {errors?.password && (
+            <StyledErrorLabel>
+              {errors?.password?.message || "Error"}
             </StyledErrorLabel>
-          ) : (
-            <></>
           )}
         </StyledContainer>
         <Button text="SIGN IN" />

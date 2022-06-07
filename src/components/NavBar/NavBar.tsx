@@ -14,6 +14,7 @@ import {
   StyledLogo,
   StyledNavbar,
   StyledSearch,
+  StyledSearchButton,
 } from "./styles";
 import { getFavoriteBooks } from "../../store/selectors/favoriteBooksSelectors";
 import { useAppSelector } from "../../store/hooks/hooks";
@@ -53,13 +54,15 @@ const NavBar = () => {
             type="text"
             {...register("title")}
           />
-          <IconSelector id="search" />
+          <StyledSearchButton type="submit">
+            <IconSelector id="search" />
+          </StyledSearchButton>
         </form>
       </StyledSearch>
       <StyledContainer>
         <StyledFavorites to={routes.FAVORITES}>
           <IconSelector id="favorites" />
-          {favoriteBooks.length != 0 ? (
+          {favoriteBooks.length ? (
             <StyledFavoriteCircle>
               <IconSelector id="red-circle" />
             </StyledFavoriteCircle>
@@ -69,7 +72,7 @@ const NavBar = () => {
         </StyledFavorites>
         <StyledCart to={routes.CART}>
           <IconSelector id="cart" />
-          {carts.length != 0 ? (
+          {carts.length ? (
             <StyledCartCircle>
               <IconSelector id="red-circle" />
             </StyledCartCircle>
