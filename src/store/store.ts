@@ -21,6 +21,7 @@ import recommendedBooksSlice from "./slices/recommendedBooksSlice";
 const rootReducer = combineReducers({
   cartRoot: cartSlice,
   favoriteBookRoot: favoriteBooksSlice,
+  userRoot: userSlice,
 });
 
 const persistConfig = {
@@ -32,7 +33,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
   reducer: {
-    user: userSlice,
+    user: persistedReducer,
     newBooks: newBooksSlice,
     searchBooks: searchBooksSlice,
     detailsBook: detailsBooksSlice,

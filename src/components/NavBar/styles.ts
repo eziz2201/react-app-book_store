@@ -63,6 +63,9 @@ const StyledFavoriteCircle = styled.div`
 `;
 const StyledCart = styled(NavLink)`
   position: relative;
+  ${media.TABLET} {
+    display: none;
+  }
 `;
 const StyledAccount = styled(NavLink)`
   ${media.TABLET} {
@@ -87,7 +90,7 @@ const StyledContainer = styled.div`
   padding: 19px;
   justify-self: end;
   ${media.TABLET} {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     grid-gap: 46px;
   }
 `;
