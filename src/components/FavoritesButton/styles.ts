@@ -14,7 +14,7 @@ export const StyledButton = styled.button`
   }
   background-color: ${colors.PRIMARY};
   &:hover {
-    background-color: ${colors.PRIMARYSECOND};
+    background-color: ${colors.PRIMARY_SECOND};
     path {
       stroke: ${colors.RED};
     }

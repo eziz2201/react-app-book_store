@@ -9,15 +9,15 @@ const StyledSearchBook = styled(Link)`
   gap: 10px;
   padding: 10px;
   background-color: ${colors.WHITE};
+  border: 1px solid ${colors.GRAY};
+  border-top: 1px solid ${colors.WHITE};
   :first-of-type {
     border-top: 1px solid ${colors.GRAY};
   }
-  border: 1px solid ${colors.GRAY};
-  border-top: 1px solid ${colors.WHITE};
   text-decoration: none;
-
+  transition: background .9s;
   :hover {
-    border: 1px solid ${colors.PRIMARY};
+    background-color: ${colors.GRAY};
   }
 `;
 const StyledImage = styled.div`

@@ -119,7 +119,7 @@ const StyledRemoveButton = styled.button`
     margin: 0;
     background-color: ${colors.PRIMARY};
     &:hover {
-      background-color: ${colors.PRIMARYSECOND};
+      background-color: ${colors.PRIMARY_SECOND};
     }
   }
 `;
