@@ -2,7 +2,8 @@
     <a s href="https://eziz2201.github.io/react-app-book_store/">BOOKSTORE</a>
 </h1>
 
-<img src="https://i.postimg.cc/RZvLkP4Z/Screenshot-1.png" alt="bookstore">
+<a s href="https://eziz2201.github.io/react-app-book_store/"><img src="https://i.postimg.cc/RZvLkP4Z/Screenshot-1.png" alt="bookstore"></a>
+
 
 ## 🛠 Technologies
 
