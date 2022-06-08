@@ -1,8 +1,8 @@
 <h1 align="center">
-    <a s href="https://eziz2201.github.io/react-app-book_store/">BOOKSTORE"</a>
+    <a s href="https://eziz2201.github.io/react-app-book_store/">BOOKSTORE</a>
 </h1>
 
-<img src="https://drive.google.com/drive/u/0/folders/1BIg1kLF8049CEm6psrzES-W3TXEf2f93" alt="bookstore">
+<img src="https://i.postimg.cc/RZvLkP4Z/Screenshot-1.png" alt="bookstore">
 
 ## 🛠 Technologies
 
@@ -30,6 +30,3 @@ The following tools were used to create the project:
 -   **[React Star Ratings](https://github.com/ekeric13/react-star-ratings)**
 
 -   **[Styled Components](https://styled-components.com/)**
-
-
-
