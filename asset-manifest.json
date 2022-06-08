@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-app-book_store/static/css/main.e7720ab7.css",
+    "main.js": "/react-app-book_store/static/js/main.775f3724.js",
+    "static/media/scarecrow.png": "/react-app-book_store/static/media/scarecrow.633430866163f4a7e8f2.png",
+    "index.html": "/react-app-book_store/index.html",
+    "main.e7720ab7.css.map": "/react-app-book_store/static/css/main.e7720ab7.css.map",
+    "main.775f3724.js.map": "/react-app-book_store/static/js/main.775f3724.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e7720ab7.css",
+    "static/js/main.775f3724.js"
+  ]
+}
