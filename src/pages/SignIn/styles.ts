@@ -3,20 +3,18 @@ import { colors } from "../../ui/colors";
 import { media } from "../../ui/media";
 import { typography } from "../../ui/typography";
 
+const StyledSignContainer = styled.div`
+  padding: 77px 0 150px;
+`;
+
 const StyledSign = styled.div`
   max-width: 544px;
   width: 100%;
   margin: 0 auto;
-  margin-top: 100px;
-  margin-bottom: 100px;
   border: 1px solid ${colors.GRAY};
-  ${media.TABLET} {
-    margin-top: 170px;
-    margin-bottom: 169px;
-  }
   ${media.PHONE} {
     border: none;
-    margin: 56px 0;
+    
   }
 `;
 
@@ -112,4 +110,5 @@ export {
   StyledTab,
   StyledTabs,
   StyledError,
+  StyledSignContainer,
 };

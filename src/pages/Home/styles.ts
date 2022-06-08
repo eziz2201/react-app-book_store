@@ -3,7 +3,7 @@ import { colors } from "../../ui/colors";
 import { typography } from "../../ui/typography";
 
 const StyledHome = styled.div`
-  padding: 72px 0;
+  padding: 72px 0 150px;
 `;
 
 const StyledTitle = styled.h1`

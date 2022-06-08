@@ -8,9 +8,13 @@ const StyledFooter = styled.footer`
   grid-template-columns: repeat(2, 1fr);
   padding: 36px 0;
   border-top: 1px solid ${colors.GRAY};
+  width: calc(100% - 80px);
+  position: absolute;
+  bottom: 0;
   ${media.PHONE} {
     display: block;
     text-align: center;
+    width: calc(100% - 50px);
   }
 `;
 

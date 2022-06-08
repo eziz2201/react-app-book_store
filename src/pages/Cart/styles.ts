@@ -4,11 +4,11 @@ import { media } from "../../ui/media";
 import { typography } from "../../ui/typography";
 
 const StyledCart = styled.div`
+  padding: 77px 0 150px;
   min-height: 60vh;
   height: 100%;
 `;
 const StyledBackButton = styled.div`
-  margin-top: 77px;
   cursor: pointer;
   path {
     fill: ${colors.PRIMARY};
@@ -59,7 +59,7 @@ const StyledCheckItem = styled.p`
 const StyledCheckTotal = styled.h2`
   display: flex;
   justify-content: space-between;
-  margin: 24px 0;
+  margin-top: 24px;
   ${typography.H2};
   color: ${colors.PRIMARY};
 `;

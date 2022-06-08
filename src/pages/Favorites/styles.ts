@@ -3,10 +3,9 @@ import { colors } from "../../ui/colors";
 import { typography } from "../../ui/typography";
 
 const StyledFavorites = styled.div`
-  padding-bottom: 50px;
+  padding: 77px 0 150px;
 `;
 const StyledBackButton = styled.div`
-  margin-top: 77px;
   cursor: pointer;
   path {
     fill: ${colors.PRIMARY};

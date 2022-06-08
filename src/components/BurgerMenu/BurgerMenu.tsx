@@ -33,8 +33,10 @@ const BurgerMenu = ({ handleBurgerClose, isOpen }: IBurgerMenu) => {
   const dispatch = useAppDispatch();
   const onSubmit = (data: IData) => {
     navigate(`search/${data.title}/1`);
+    handleBurgerClose();
   };
   const handleAuth = () => {
+    handleBurgerClose();
     if (isAuth) {
       dispatch(unsetUser());
     } else {
@@ -57,16 +59,26 @@ const BurgerMenu = ({ handleBurgerClose, isOpen }: IBurgerMenu) => {
                 type="text"
                 {...register("title")}
               />
-              <IconSelector id="search" />
+              <button type="submit">
+                <IconSelector id="search" />
+              </button>
             </form>
           </StyledBurgerSearch>
           {isAuth && (
-            <StyledBurgerLink to={`/${routes.FAVORITES}`}>
+            <StyledBurgerLink
+              to={`/${routes.FAVORITES}`}
+              onClick={handleBurgerClose}
+            >
               FAVORITES
             </StyledBurgerLink>
           )}
           {isAuth && (
-            <StyledBurgerLink to={`/${routes.CART}`}>CART</StyledBurgerLink>
+            <StyledBurgerLink
+              to={`/${routes.CART}`}
+              onClick={handleBurgerClose}
+            >
+              CART
+            </StyledBurgerLink>
           )}
 
           <StyledBurgerButton onClick={handleAuth}>

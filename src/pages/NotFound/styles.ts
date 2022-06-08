@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../../ui/colors";
+import { media } from "../../ui/media";
 import { typography } from "../../ui/typography";
 
 const StyledNotFound = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 30px 0 0;
+  padding: 30px 0 150px;
 `;
 
 const StyledTitle = styled.h1`
@@ -20,6 +21,10 @@ const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: 150px;
+  ${media.TABLET} {
+    display: grid;
+    gap: 0;
+  }
 `;
 
 const StyledImage = styled.div`
@@ -27,10 +32,17 @@ const StyledImage = styled.div`
     width: 350px;
     margin-bottom: 50px;
   }
+  ${media.TABLET} {
+    margin: 0 auto;
+    margin-bottom: 0;
+  }
 `;
 
 const StyledTextContainer = styled.div`
   margin-top: 50px;
+  ${media.TABLET}{
+    margin-top: 10px;
+  }
 `;
 
 const StyledTextTitle = styled.h2`

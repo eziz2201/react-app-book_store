@@ -8,9 +8,10 @@ interface IButton {
   isActive: boolean;
 }
 
-const StyledDetailsBook = styled.div``;
+const StyledDetailsBook = styled.div`
+  padding: 77px 0 150px;
+`;
 const StyledBackButton = styled.div`
-  margin-top: 77px;
   cursor: pointer;
   path {
     fill: ${colors.PRIMARY};
@@ -57,8 +58,8 @@ const StyledBookImage = styled.div`
   ${media.PHONE} {
     height: 272px;
     img {
-      max-width: 300px;
-      height: 350px;
+      max-width: 270px;
+      height: 300px;
     }
   }
 `;

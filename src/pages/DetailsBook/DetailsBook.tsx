@@ -5,6 +5,7 @@ import FavoritesButton from "../../components/FavoritesButton/FavoritesButton";
 import IconSelector from "../../components/IconSelector/IconSelector";
 import Loading from "../../components/Loading/Loading";
 import StarRating from "../../components/StarRating/StarRating";
+import Subscribe from "../../components/Subscribe/Subscribe";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import {
   getDetailsBook,
@@ -174,6 +175,7 @@ const DetailsBook = () => {
           <IconSelector id="linkedin" />
         </StyledIconsItem>
       </StyledIcons>
+      <Subscribe />
     </StyledDetailsBook>
   );
 };
