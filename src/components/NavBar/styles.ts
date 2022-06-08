@@ -45,6 +45,33 @@ const StyledSearch = styled.div`
   }
 `;
 
+const StyledSearchResult = styled.div`
+  position: absolute;
+  width: 100%;
+  margin-top: 5px;
+  background-color: ${colors.WHITE};
+  z-index: 2;
+  ${media.TABLET} {
+    display: none;
+  }
+`;
+const StyledSearchResultContainer = styled.div`
+  max-height: 420px;
+  overflow: auto;
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+`;
+const StyledAllResultsButton = styled.button`
+  width: 100%;
+  padding: 17px;
+  background-color: ${colors.WHITE};
+  border: 1px solid ${colors.GRAY};
+  ${typography.TAB};
+  text-align: center;
+  color: ${colors.SECONDARY};
+`;
+
 const StyledFavorites = styled(NavLink)`
   position: relative;
   ${media.TABLET} {
@@ -136,4 +163,7 @@ export {
   StyledNavbar,
   StyledSearch,
   StyledSearchButton,
+  StyledSearchResult,
+  StyledAllResultsButton,
+  StyledSearchResultContainer,
 };

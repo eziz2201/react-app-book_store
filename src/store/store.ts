@@ -17,6 +17,7 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import recommendedBooksSlice from "./slices/recommendedBooksSlice";
+import navSearchBooksSlice from "./slices/navSearchBooksSlice";
 
 const rootReducer = combineReducers({
   cartRoot: cartSlice,
@@ -36,6 +37,7 @@ const store = configureStore({
     user: persistedReducer,
     newBooks: newBooksSlice,
     searchBooks: searchBooksSlice,
+    navSearchBooks: navSearchBooksSlice,
     detailsBook: detailsBooksSlice,
     favoriteBook: persistedReducer,
     cart: persistedReducer,

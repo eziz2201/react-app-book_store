@@ -74,6 +74,13 @@ const BURGER_MENU = css`
   line-height: 44px;
 `;
 
+const SEARCH_BOOK = css`
+  font-family: "Helios";
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 32px;
+`;
+
 export const typography = {
   H1,
   H2,
@@ -84,4 +91,5 @@ export const typography = {
   TAB,
   BUTTON,
   BURGER_MENU,
+  SEARCH_BOOK,
 };
