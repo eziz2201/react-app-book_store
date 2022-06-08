@@ -7,8 +7,8 @@ const StyledSign = styled.div`
   max-width: 544px;
   width: 100%;
   margin: 0 auto;
-  margin-top: 194px;
-  margin-bottom: 205px;
+  margin-top: 100px;
+  margin-bottom: 100px;
   border: 1px solid ${colors.GRAY};
   ${media.TABLET} {
     margin-top: 170px;

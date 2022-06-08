@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../../ui/colors";
 import { media } from "../../ui/media";
@@ -30,11 +31,15 @@ const StyledBurgerMenuContainer = styled.div`
 `;
 
 const StyledBurgerMenuNav = styled.div`
+  position: relative;
   width: 368px;
   height: 100%;
   margin-left: auto;
   padding: 0 40px;
   background-color: ${colors.WHITE};
+  ${media.PHONE} {
+    margin: 0 auto;
+  }
 `;
 
 const StyledBurgerCloseContainer = styled.div`
@@ -62,18 +67,24 @@ const StyledBurgerSearch = styled.div`
   }
 `;
 
-const StyledBurgerTitle = styled.h1`
+const StyledBurgerLink = styled(Link)`
   display: block;
+  text-decoration: none;
+  color: ${colors.PRIMARY};
   &:first-of-type {
     margin-bottom: 55px;
   }
   ${typography.BURGER_MENU};
   text-align: center;
+  :active {
+    color: ${colors.PRIMARY};
+  }
 `;
 
 const StyledBurgerButton = styled.div`
+  position: absolute;
   width: 288px;
-  margin-top: 100px;
+  bottom: 10px;
 `;
 
 export {
@@ -84,5 +95,5 @@ export {
   StyledBurgerMenuContainer,
   StyledBurgerMenuNav,
   StyledBurgerSearch,
-  StyledBurgerTitle,
+  StyledBurgerLink,
 };

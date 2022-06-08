@@ -45,6 +45,33 @@ const StyledSearch = styled.div`
   }
 `;
 
+const StyledSearchResult = styled.div`
+  position: absolute;
+  width: 100%;
+  margin-top: 5px;
+  background-color: ${colors.WHITE};
+  z-index: 2;
+  ${media.TABLET} {
+    display: none;
+  }
+`;
+const StyledSearchResultContainer = styled.div`
+  max-height: 420px;
+  overflow: auto;
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+`;
+const StyledAllResultsButton = styled.button`
+  width: 100%;
+  padding: 17px;
+  background-color: ${colors.WHITE};
+  border: 1px solid ${colors.GRAY};
+  ${typography.TAB};
+  text-align: center;
+  color: ${colors.SECONDARY};
+`;
+
 const StyledFavorites = styled(NavLink)`
   position: relative;
   ${media.TABLET} {
@@ -63,6 +90,9 @@ const StyledFavoriteCircle = styled.div`
 `;
 const StyledCart = styled(NavLink)`
   position: relative;
+  ${media.TABLET} {
+    display: none;
+  }
 `;
 const StyledAccount = styled(NavLink)`
   ${media.TABLET} {
@@ -87,7 +117,7 @@ const StyledContainer = styled.div`
   padding: 19px;
   justify-self: end;
   ${media.TABLET} {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     grid-gap: 46px;
   }
 `;
@@ -133,4 +163,7 @@ export {
   StyledNavbar,
   StyledSearch,
   StyledSearchButton,
+  StyledSearchResult,
+  StyledAllResultsButton,
+  StyledSearchResultContainer,
 };
