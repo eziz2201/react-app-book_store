@@ -114,10 +114,10 @@ const StyledRemoveCartButton = styled.button`
       transition: all 0.3s;
     }
     &:hover {
-      background-color: ${colors.PRIMARYSECOND};
+      background-color: ${colors.PRIMARY_SECOND};
     }
     &:hover svg {
-      background-color: ${colors.PRIMARYSECOND};
+      background-color: ${colors.PRIMARY_SECOND};
     }
     &:hover path {
       fill: ${colors.RED};

@@ -42,7 +42,7 @@ const StyledTab = styled.div`
     color: ${colors.PRIMARY};
   }
   &:last-child:hover {
-    color: ${colors.PRIMARYSECOND};
+    color: ${colors.PRIMARY_SECOND};
   }
 `;
 

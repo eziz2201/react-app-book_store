@@ -12,7 +12,7 @@ export const StyledButton = styled.button`
   text-align: center;
   transition: background 0.5s;
   &:hover {
-    background-color: ${colors.PRIMARYSECOND};
+    background-color: ${colors.PRIMARY_SECOND};
   }
 
   &:active {

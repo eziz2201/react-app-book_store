@@ -145,8 +145,8 @@ const StyledTab = styled.button<IButton>`
   cursor: pointer;
   transition: all 0.5s;
   &:hover {
-    color: ${colors.PRIMARYSECOND};
-    border-bottom: 2px solid ${colors.PRIMARYSECOND};
+    color: ${colors.PRIMARY_SECOND};
+    border-bottom: 2px solid ${colors.PRIMARY_SECOND};
   }
   border-bottom: ${({ isActive }) =>
     isActive

@@ -70,6 +70,11 @@ const StyledAllResultsButton = styled.button`
   ${typography.TAB};
   text-align: center;
   color: ${colors.SECONDARY};
+  transition: all 0.5s;
+  :hover {
+    color: ${colors.PRIMARY};
+    border: 1px solid ${colors.PRIMARY};
+  }
 `;
 
 const StyledFavorites = styled(NavLink)`
